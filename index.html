@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChemiCLSES | CFD & Digitalization Solutions</title>
+  <meta name="description" content="ChemiCLSES provides cutting-edge CFD simulation, process optimization, and software development solutions for engineering industries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-mark">⬡</span>
+        <span class="logo-text">Chemi<span class="logo-accent">CLSES</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="cfdCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag"><span class="tag-dot"></span>CFD · Digitalization · Optimization</div>
+      <h1 class="hero-title">
+        Engineering the<br/>
+        <span class="title-gradient">Invisible Flow</span>
+      </h1>
+      <p class="hero-sub">
+        We transform complex fluid dynamics, process inefficiencies, and engineering challenges
+        into precise, simulation-driven digital solutions.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Explore Solutions</a>
+        <a href="#contact" class="btn-ghost">Start a Project →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val">98%</span><span class="stat-label">Simulation Accuracy</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-val">150+</span><span class="stat-label">Projects Delivered</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-val">12+</span><span class="stat-label">Industry Sectors</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">What We Do</div>
+        <h2>Three Pillars of<br/>Engineering Excellence</h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-index="01">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M8 36 C12 20, 24 16, 24 8 C24 16, 36 20, 40 36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M4 28 C10 24, 20 22, 24 14 C28 22, 38 24, 44 28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="24" cy="8" r="2.5" fill="currentColor"/>
+              <line x1="8" y1="38" x2="40" y2="38" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>CFD Simulation</h3>
+          <p>High-fidelity computational fluid dynamics modeling for heat transfer, turbulence, multiphase flows, and reactive systems — validated against real-world data.</p>
+          <ul class="service-tags">
+            <li>Turbulence Modeling</li>
+            <li>Heat Transfer</li>
+            <li>Multiphase Flow</li>
+            <li>Reactive CFD</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card featured" data-index="02">
+          <div class="service-badge">Core Service</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="10" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+              <rect x="26" y="10" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+              <rect x="16" y="30" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+              <line x1="14" y1="22" x2="24" y2="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,2"/>
+              <line x1="34" y1="22" x2="28" y2="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,2"/>
+            </svg>
+          </div>
+          <h3>Process Optimization</h3>
+          <p>Data-driven optimization of industrial processes — reducing energy consumption, maximizing yield, and eliminating bottlenecks using digital twin methodologies.</p>
+          <ul class="service-tags">
+            <li>Digital Twin</li>
+            <li>Energy Efficiency</li>
+            <li>Yield Optimization</li>
+            <li>Root Cause Analysis</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-card" data-index="03">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <polyline points="6,36 14,24 22,28 30,16 38,20 42,12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="6" y="6" width="36" height="36" rx="2" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+              <circle cx="22" cy="28" r="2" fill="currentColor"/>
+              <circle cx="30" cy="16" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Software Development</h3>
+          <p>Custom engineering software, simulation dashboards, automation scripts, and API integrations — built for technical teams who need precision tools that work.</p>
+          <ul class="service-tags">
+            <li>Simulation Dashboards</li>
+            <li>Process Automation</li>
+            <li>Data Pipelines</li>
+            <li>Engineering APIs</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="capabilities" id="capabilities">
+    <div class="container">
+      <div class="cap-layout">
+        <div class="cap-left">
+          <div class="eyebrow">Technical Depth</div>
+          <h2>Built on<br/>Simulation Science</h2>
+          <p class="cap-desc">Our team combines decades of chemical engineering expertise with modern computational methods. We don't use black-box tools — we build and validate every model from first principles.</p>
+          <a href="#contact" class="btn-primary">Discuss Your Challenge</a>
+        </div>
+        <div class="cap-right">
+          <div class="cap-table">
+            <div class="cap-row header-row">
+              <span>Domain</span>
+              <span>Tools & Methods</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-domain">Fluid Dynamics</span>
+              <span class="cap-tools">ANSYS Fluent, OpenFOAM, StarCCM+</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-domain">Process Sim</span>
+              <span class="cap-tools">Aspen Plus, HYSYS, gPROMS</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-domain">Data Science</span>
+              <span class="cap-tools">Python, TensorFlow, scikit-learn</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-domain">Visualization</span>
+              <span class="cap-tools">ParaView, Plotly, Three.js</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-domain">Automation</span>
+              <span class="cap-tools">REST APIs, SCADA, OPC-UA</span>
+            </div>
+            <div class="cap-row">
+              <span class="cap-domain">Cloud / HPC</span>
+              <span class="cap-tools">AWS, Azure, Slurm HPC clusters</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Industries Served</div>
+        <h2>Where Precision Matters Most</h2>
+      </div>
+      <div class="industry-grid">
+        <div class="industry-item"><div class="ind-icon">⚗️</div><span>Chemical Processing</span></div>
+        <div class="industry-item"><div class="ind-icon">🛢️</div><span>Oil & Gas</span></div>
+        <div class="industry-item"><div class="ind-icon">⚡</div><span>Power Generation</span></div>
+        <div class="industry-item"><div class="ind-icon">💧</div><span>Water Treatment</span></div>
+        <div class="industry-item"><div class="ind-icon">🏭</div><span>Manufacturing</span></div>
+        <div class="industry-item"><div class="ind-icon">🌡️</div><span>HVAC & Thermal</span></div>
+        <div class="industry-item"><div class="ind-icon">🚀</div><span>Aerospace</span></div>
+        <div class="industry-item"><div class="ind-icon">🌿</div><span>Renewable Energy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">How We Work</div>
+        <h2>From Problem to Solution</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h4>Discovery & Scoping</h4>
+            <p>We begin by understanding your engineering challenge in detail — the physics, the constraints, the business impact, and the definition of success.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h4>Model Development</h4>
+            <p>We build and configure the simulation environment, selecting appropriate physical models, boundary conditions, and solver strategies for your specific system.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h4>Validation & Analysis</h4>
+            <p>Results are rigorously validated against experimental data or industry benchmarks. We quantify uncertainty and deliver insights — not just numbers.</p>
+          </div>
+        </div>
+        <div class="process-connector"></div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h4>Deliver & Deploy</h4>
+            <p>We hand over actionable recommendations, detailed reports, or deployed software tools — along with training and ongoing support for your team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-visual">
+          <div class="about-box">
+            <div class="ab-line">
+              <span class="ab-key">Founded</span>
+              <span class="ab-val">ChemiCLSES Ltd.</span>
+            </div>
+            <div class="ab-line">
+              <span class="ab-key">Focus</span>
+              <span class="ab-val">CFD & Digitalization</span>
+            </div>
+            <div class="ab-line">
+              <span class="ab-key">Approach</span>
+              <span class="ab-val">First-principles modeling</span>
+            </div>
+            <div class="ab-line">
+              <span class="ab-key">Clients</span>
+              <span class="ab-val">Global, industrial sectors</span>
+            </div>
+            <div class="ab-line">
+              <span class="ab-key">Delivery</span>
+              <span class="ab-val">Reports · Software · Training</span>
+            </div>
+          </div>
+          <div class="about-mesh"></div>
+        </div>
+        <div class="about-text">
+          <div class="eyebrow">About Us</div>
+          <h2>Rigorous Science.<br/>Practical Solutions.</h2>
+          <p>ChemiCLSES was built around a single conviction: that the gap between simulation and real-world engineering decisions is a solvable problem. We bring together specialists in fluid mechanics, chemical engineering, data science, and software development to deliver solutions that are simultaneously technically rigorous and operationally practical.</p>
+          <p>Every engagement starts with the physics — not the software. We believe in building models that represent reality, not fitting reality to a convenient model.</p>
+          <div class="about-values">
+            <div class="value"><span class="val-icon">◈</span>Technical Rigor</div>
+            <div class="value"><span class="val-icon">◈</span>Transparent Methodology</div>
+            <div class="value"><span class="val-icon">◈</span>Results-Oriented</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-left">
+          <div class="eyebrow">Let's Talk</div>
+          <h2>Ready to Solve<br/>Your Toughest Problem?</h2>
+          <p>Whether you have a defined project or just a challenging question — we want to hear about it. Our team responds within 24 hours.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="ci-label">Website</span>
+              <span class="ci-val">www.chemiclses.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">Email</span>
+              <span class="ci-val">info@chemiclses.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="ci-label">Services</span>
+              <span class="ci-val">CFD · Optimization · Software</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Dr. Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="ACME Engineering" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Area</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>CFD Simulation</option>
+              <option>Process Optimization</option>
+              <option>Software Development</option>
+              <option>Digital Twin Development</option>
+              <option>Other / Multiple</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Description</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe your engineering challenge or project scope..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width" id="submitBtn">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-mark">⬡</span>
+            <span class="logo-text">Chemi<span class="logo-accent">CLSES</span></span>
+          </a>
+          <p>Engineering-grade CFD simulation, process optimization, and software development solutions.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Services</h5>
+            <a href="#services">CFD Simulation</a>
+            <a href="#services">Process Optimization</a>
+            <a href="#services">Software Development</a>
+            <a href="#services">Digital Twin</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="#about">About Us</a>
+            <a href="#process">Our Process</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ChemiCLSES. All rights reserved. | www.chemiclses.com</p>
+        <p class="footer-mono">CFD · DIGITALIZATION · OPTIMIZATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
