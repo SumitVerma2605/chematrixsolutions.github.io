@@ -239,49 +239,49 @@ function handleSubmit(e) {
 })();
 
 // Enquiry form: submit via AJAX so the page never redirects.
-    (function () {
-      var form = document.getElementById('enquiryForm');
-      if (!form) return;
- 
-      var submitBtn = document.getElementById('enquirySubmitBtn');
-      var successMsg = document.getElementById('enquirySuccessMsg');
-      var errorMsg = document.getElementById('enquiryErrorMsg');
- 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
- 
-        successMsg.style.display = 'none';
-        errorMsg.style.display = 'none';
- 
-        var originalBtnText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
- 
-        var formData = new FormData(form);
- 
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { Accept: 'application/json' }
+  (function () {
+    var form = document.getElementById('enquiryForm');
+    if (!form) return;
+
+    var submitBtn = document.getElementById('enquirySubmitBtn');
+    var successMsg = document.getElementById('enquirySuccessMsg');
+    var errorMsg = document.getElementById('enquiryErrorMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      var originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      var formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (response) {
+          return response.json();
         })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            if (data && data.success) {
-              form.reset();
-              form.style.display = 'none';
-              successMsg.style.display = 'block';
-            } else {
-              errorMsg.style.display = 'block';
-            }
-          })
-          .catch(function () {
+        .then(function (data) {
+          if (data && data.success) {
+            form.reset();
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+          } else {
             errorMsg.style.display = 'block';
-          })
-          .finally(function () {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-          });
-      });
-    })();
+          }
+        })
+        .catch(function () {
+          errorMsg.style.display = 'block';
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        });
+    });
+  })();
