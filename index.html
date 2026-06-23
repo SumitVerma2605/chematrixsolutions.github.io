@@ -323,13 +323,22 @@
             </div>
           </div>
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="2de65b00-fd6f-4bcb-8447-1348ec208087">
-          <input type="text" name="name" required>
-          <input type="email" name="email" required>
-          <textarea name="message" required></textarea>
-          <button type="submit">Submit</button>
+ 
+          <label for="enquiryName" class="form-label">Name</label>
+          <input type="text" id="enquiryName" name="name" required placeholder="Your Name">
+ 
+          <label for="enquiryEmail" class="form-label">Email ID</label>
+          <input type="email" id="enquiryEmail" name="email" required placeholder="Your Email">
+ 
+          <label for="enquiryMessage" class="form-label">Enquiry</label>
+          <textarea id="enquiryMessage" name="message" required placeholder="Your Enquiry"></textarea>
+ 
+          <button type="submit" id="enquirySubmitBtn">Submit</button>
         </form>
+
+        
       </div>
     </div>
   </section>
