@@ -323,19 +323,42 @@
             </div>
           </div>
         </div>
-        <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST">
+        
+        
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
           <input type="hidden" name="access_key" value="2de65b00-fd6f-4bcb-8447-1348ec208087">
- 
-          <label for="enquiryName" class="form-label">Name</label>
-          <input type="text" id="enquiryName" name="name" required placeholder="Your Name">
- 
-          <label for="enquiryEmail" class="form-label">Email ID</label>
-          <input type="email" id="enquiryEmail" name="email" required placeholder="Your Email">
- 
-          <label for="enquiryMessage" class="form-label">Enquiry</label>
-          <textarea id="enquiryMessage" name="message" required placeholder="Your Enquiry"></textarea>
- 
-          <button type="submit" id="enquirySubmitBtn">Submit</button>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Dr. Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="ACME Engineering" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="joe@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="service">Service Area</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>CFD Simulation</option>
+              <option>Process Optimization</option>
+              <option>Computer Vision</option>
+              <option>Software Development</option>
+              <option>Digital Twin Development</option>
+              <option>Other / Multiple</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Description</label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe your engineering challenge or project scope..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width" id="submitBtn">Send Message</button>
+          <p class="form-note" id="formNote"></p>
         </form>
 
         
