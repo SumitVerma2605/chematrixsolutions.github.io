@@ -239,49 +239,49 @@ function handleSubmit(e) {
 })();
 
 // Enquiry form: submit via AJAX so the page never redirects.
-  (function () {
-    var form = document.getElementById('enquiryForm');
-    if (!form) return;
+// Contact form: submit via AJAX (Web3Forms) so the page never redirects.
+function handleSubmit(event) {
+  event.preventDefault();
 
-    var submitBtn = document.getElementById('enquirySubmitBtn');
-    var successMsg = document.getElementById('enquirySuccessMsg');
-    var errorMsg = document.getElementById('enquiryErrorMsg');
+  var form = document.getElementById('contactForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var formNote = document.getElementById('formNote');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  formNote.textContent = '';
+  formNote.classList.remove('form-note-success', 'form-note-error');
 
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'none';
+  var originalBtnText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
 
-      var originalBtnText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
+  var formData = new FormData(form);
 
-      var formData = new FormData(form);
-
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' }
-      })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          if (data && data.success) {
-            form.reset();
-            form.style.display = 'none';
-            successMsg.style.display = 'block';
-          } else {
-            errorMsg.style.display = 'block';
-          }
-        })
-        .catch(function () {
-          errorMsg.style.display = 'block';
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalBtnText;
-        });
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { Accept: 'application/json' }
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if (data && data.success) {
+        form.reset();
+        formNote.textContent = '✅ Your enquiry has been submitted. Our team will get back to you within 24 hours.';
+        formNote.classList.add('form-note-success');
+      } else {
+        formNote.textContent = '⚠️ Something went wrong while submitting your enquiry. Please try again.';
+        formNote.classList.add('form-note-error');
+      }
+    })
+    .catch(function () {
+      formNote.textContent = '⚠️ Something went wrong while submitting your enquiry. Please try again.';
+      formNote.classList.add('form-note-error');
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
     });
-  })();
+
+  return false;
+}
