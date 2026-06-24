@@ -257,7 +257,7 @@ function handleSubmit(event) {
   var formData = new FormData(form);
 
   // Add your Web3Forms access key
-  formData.append('access_key', '2de65b00-fd6f-4bcb-8447-1348ec208087');
+  formData.append('access_key', '71b6c996-2c19-4b44-a1f4-61155515364d');
 
   fetch('https://api.web3forms.com/submit', {
     method: 'POST',
