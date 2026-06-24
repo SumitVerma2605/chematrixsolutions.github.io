@@ -256,26 +256,33 @@ function handleSubmit(event) {
 
   var formData = new FormData(form);
 
-  fetch(form.action, {
+  // Add your Web3Forms access key
+  formData.append('access_key', '2de65b00-fd6f-4bcb-8447-1348ec208087');
+
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
-    body: formData,
-    headers: { Accept: 'application/json' }
+    body: formData
   })
     .then(function (response) {
-      return response.json();
+      return response.json().then(function (data) {
+        return { ok: response.ok, data: data };
+      });
     })
-    .then(function (data) {
-      if (data && data.success) {
+    .then(function (result) {
+      if (result.ok) {
         form.reset();
-        formNote.textContent = '✅ Your enquiry has been submitted. Our team will get back to you within 24 hours.';
+        formNote.textContent =
+          '✅ Your enquiry has been submitted. Our team will get back to you within 24 hours.';
         formNote.classList.add('form-note-success');
       } else {
-        formNote.textContent = '⚠️ Something went wrong while submitting your enquiry. Please try again.';
+        formNote.textContent =
+          '⚠️ ' + (result.data.message || 'Something went wrong while submitting your enquiry.');
         formNote.classList.add('form-note-error');
       }
     })
     .catch(function () {
-      formNote.textContent = '⚠️ Something went wrong while submitting your enquiry. Please try again.';
+      formNote.textContent =
+        '⚠️ Something went wrong while submitting your enquiry. Please try again.';
       formNote.classList.add('form-note-error');
     })
     .finally(function () {
