@@ -1,244 +1,267 @@
-/* =============================================
-  CHEMatrix — Scripts
-   ============================================= */
+// Chematrix Solutions — shared interactions
 
-// ---- CFD Particle Canvas ----
-(function() {
-  const canvas = document.getElementById('cfdCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+document.addEventListener('DOMContentLoaded', () => {
 
-  let W, H, particles, streamLines;
-  const PARTICLE_COUNT = 120;
-  const STREAM_COUNT = 8;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
+  /* Mobile nav toggle */
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', links.classList.contains('open'));
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
   }
 
-  function rand(a, b) { return a + Math.random() * (b - a); }
-
-  // Simulate a simple velocity field (CFD-like streamlines)
-  function velocityField(x, y) {
-    const nx = x / W - 0.5;
-    const ny = y / H - 0.5;
-    // Swirl + horizontal bias
-    const vx = 0.6 + 0.4 * Math.sin(ny * Math.PI * 2 + Date.now() * 0.0003);
-    const vy = 0.3 * Math.sin(nx * Math.PI * 3 + Date.now() * 0.0002) * Math.cos(ny * Math.PI);
-    return { vx, vy };
+  /* Scroll reveal */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
   }
 
-  function initParticles() {
-    particles = Array.from({ length: PARTICLE_COUNT }, () => ({
-      x: rand(0, W),
-      y: rand(0, H),
-      speed: rand(0.4, 1.2),
-      size: rand(1.5, 3.5),
-      alpha: rand(0.15, 0.5),
-      hue: rand(180, 210),
-      life: rand(0, 200),
-      maxLife: rand(150, 300)
-    }));
+  /* Counters */
+  const counters = document.querySelectorAll('.counter[data-target]');
+  const animateCounter = (el) => {
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const val = target * (0.15 + 0.85 * p);
+      el.textContent = (Number.isInteger(target) ? Math.round(val) : val.toFixed(1)) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window && counters.length) {
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animateCounter(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => cio.observe(c));
   }
 
-  function initStreamLines() {
-    streamLines = Array.from({ length: STREAM_COUNT }, (_, i) => ({
-      y: H * (i + 1) / (STREAM_COUNT + 1),
-      phase: rand(0, Math.PI * 2),
-      amp: rand(20, 60),
-      freq: rand(0.003, 0.007),
-      speed: rand(0.0003, 0.0008),
-      alpha: rand(0.04, 0.10)
-    }));
-  }
+  /* Showcase panel tabs (index + services) */
+  const tabs = document.querySelectorAll('.panel-tab');
+  const stages = document.querySelectorAll('.panel-stage');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const key = tab.dataset.panel;
+      stages.forEach(s => s.style.display = (s.dataset.panel === key ? 'grid' : 'none'));
+    });
+  });
 
-  function drawStreamLines(t) {
-    streamLines.forEach(s => {
-      ctx.beginPath();
-      ctx.moveTo(0, s.y);
-      for (let x = 0; x <= W; x += 4) {
-        const y = s.y + Math.sin(x * s.freq + t * s.speed * 1000 + s.phase) * s.amp;
-        ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = `rgba(0, 201, 255, ${s.alpha})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
+  /* Case study filters */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseCards = document.querySelectorAll('.case-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      caseCards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        card.style.display = (f === 'all' || tags.includes(f)) ? 'flex' : 'none';
+      });
+    });
+  });
+
+  /* Blog search */
+  const blogSearch = document.querySelector('#blogSearchInput');
+  const blogCards = document.querySelectorAll('.blog-card');
+  if (blogSearch) {
+    blogSearch.addEventListener('input', () => {
+      const q = blogSearch.value.trim().toLowerCase();
+      blogCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    });
+  }
+  const blogCatLinks = document.querySelectorAll('.blog-cats a');
+  blogCatLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      blogCatLinks.forEach(l => l.classList.remove('active-cat'));
+      link.classList.add('active-cat');
+      const cat = link.dataset.cat;
+      blogCards.forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    });
+  });
+
+  /* Contact form — front-end only demo handling */
+  const form = document.querySelector('#contactForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Message sent';
+      btn.disabled = true;
+      form.reset();
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 2600);
     });
   }
 
-  function drawParticles(t) {
-    particles.forEach(p => {
-      const { vx, vy } = velocityField(p.x, p.y);
-      p.x += vx * p.speed;
-      p.y += vy * p.speed * 0.6;
-      p.life++;
+  /* Active nav link */
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === path) a.classList.add('active');
+  });
 
-      if (p.x > W + 10 || p.x < -10 || p.y > H + 10 || p.y < -10 || p.life > p.maxLife) {
-        p.x = rand(-10, 10);
-        p.y = rand(0, H);
-        p.life = 0;
-        p.maxLife = rand(150, 300);
-      }
+});
 
-      const lifeRatio = p.life / p.maxLife;
-      const fadeAlpha = p.alpha * Math.sin(lifeRatio * Math.PI);
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(${p.hue}, 90%, 65%, ${fadeAlpha})`;
-      ctx.fill();
 
-      // Trail
-      ctx.beginPath();
-      ctx.moveTo(p.x, p.y);
-      ctx.lineTo(p.x - vx * p.speed * 8, p.y - vy * p.speed * 6);
-      ctx.strokeStyle = `hsla(${p.hue}, 90%, 65%, ${fadeAlpha * 0.4})`;
-      ctx.lineWidth = 0.8;
-      ctx.stroke();
-    });
-  }
 
-  function drawGrid() {
-    const spacing = 60;
-    ctx.strokeStyle = 'rgba(0, 201, 255, 0.04)';
-    ctx.lineWidth = 0.5;
-    for (let x = 0; x < W; x += spacing) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+
+(function () {
+    const root = document.querySelector("#case-studies");
+
+    if (!root) {
+        return;
     }
-    for (let y = 0; y < H; y += spacing) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-    }
-  }
 
-  let rafId;
-  function animate(t) {
-    ctx.clearRect(0, 0, W, H);
-    // Dark gradient base
-    const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, 'rgba(10,22,40,0.95)');
-    grad.addColorStop(1, 'rgba(15,31,61,0.90)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
+    const tabs = root.querySelectorAll(".case-study-tab");
+    const panels = root.querySelectorAll(".case-study-panel");
 
-    drawGrid();
-    drawStreamLines(t);
-    drawParticles(t);
+    tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+            const targetPanelId = tab.getAttribute("data-panel");
 
-    rafId = requestAnimationFrame(animate);
-  }
+            tabs.forEach(function (item) {
+                const isActive = item === tab;
 
-  window.addEventListener('resize', () => {
-    resize();
-    initParticles();
-    initStreamLines();
-  });
+                item.classList.toggle("is-active", isActive);
+                item.setAttribute("aria-selected", String(isActive));
+            });
 
-  resize();
-  initParticles();
-  initStreamLines();
-  animate(0);
-})();
+            panels.forEach(function (panel) {
+                const isTarget = panel.id === targetPanelId;
 
+                panel.classList.toggle("is-active", isTarget);
+                panel.hidden = !isTarget;
+            });
+        });
 
-// ---- Nav scroll behavior ----
-(function() {
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-})();
+        tab.addEventListener("keydown", function (event) {
+            const currentIndex = Array.from(tabs).indexOf(tab);
+            let nextIndex = currentIndex;
 
+            if (event.key === "ArrowRight") {
+                nextIndex = (currentIndex + 1) % tabs.length;
+            }
 
-// ---- Mobile menu toggle ----
-(function() {
-  const burger = document.getElementById('burger');
-  const menu   = document.getElementById('mobileMenu');
-  if (!burger || !menu) return;
+            if (event.key === "ArrowLeft") {
+                nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+            }
 
-  burger.addEventListener('click', () => {
-    menu.classList.toggle('open');
-  });
-
-  menu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => menu.classList.remove('open'));
-  });
-})();
-
-
-// ---- Scroll reveal ----
-(function() {
-  const targets = document.querySelectorAll(
-    '.service-card, .cap-row, .industry-item, .process-step, .section-header, .contact-left, .contact-form, .about-box, .about-text, .hero-stats'
-  );
-
-  targets.forEach(el => el.classList.add('fade-in'));
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+            if (nextIndex !== currentIndex) {
+                event.preventDefault();
+                tabs[nextIndex].focus();
+                tabs[nextIndex].click();
+            }
+        });
     });
-  }, { threshold: 0.12 });
 
-  targets.forEach(el => observer.observe(el));
-})();
+    panels.forEach(function (panel) {
+        const track = panel.querySelector(".case-study-track");
+        const previousButton = panel.querySelector(".carousel-prev");
+        const nextButton = panel.querySelector(".carousel-next");
 
+        if (!track || !previousButton || !nextButton) {
+            return;
+        }
 
-// ---- Stagger service cards ----
-(function() {
-  document.querySelectorAll('.service-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.1}s`;
-  });
-  document.querySelectorAll('.industry-item').forEach((item, i) => {
-    item.style.transitionDelay = `${i * 0.06}s`;
-  });
-})();
+        function getScrollAmount() {
+            const card = track.querySelector(".case-study-card");
 
+            if (!card) {
+                return 320;
+            }
 
-// ---- Contact form ----
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn  = document.getElementById('submitBtn');
-  const note = document.getElementById('formNote');
-  const form = document.getElementById('contactForm');
+            return card.getBoundingClientRect().width + 22;
+        }
 
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
+        previousButton.addEventListener("click", function () {
+            track.scrollBy({
+                left: -getScrollAmount(),
+                behavior: "smooth"
+            });
+        });
 
-  // Simulate form submission (replace with real endpoint / formspree / emailjs)
-  setTimeout(() => {
-    btn.textContent = '✓ Message Sent';
-    note.textContent = 'Thank you! We\'ll be in touch within 24 hours.';
-    note.style.color = '#00C9FF';
-    form.reset();
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-      note.textContent = '';
-    }, 5000);
-  }, 1200);
-}
+        nextButton.addEventListener("click", function () {
+            track.scrollBy({
+                left: getScrollAmount(),
+                behavior: "smooth"
+            });
+        });
 
+        let autoScrollTimer;
+        let isPaused = false;
 
-// ---- Smooth active nav links ----
-(function() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+        function startAutoScroll() {
+            window.clearInterval(autoScrollTimer);
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+            autoScrollTimer = window.setInterval(function () {
+                if (isPaused || panel.hidden) {
+                    return;
+                }
+
+                const maxScroll =
+                    track.scrollWidth - track.clientWidth - 4;
+
+                if (track.scrollLeft >= maxScroll) {
+                    track.scrollTo({
+                        left: 0,
+                        behavior: "smooth"
+                    });
+                } else {
+                    track.scrollBy({
+                        left: getScrollAmount(),
+                        behavior: "smooth"
+                    });
+                }
+            }, 4500);
+        }
+
+        panel.addEventListener("mouseenter", function () {
+            isPaused = true;
+        });
+
+        panel.addEventListener("mouseleave", function () {
+            isPaused = false;
+        });
+
+        panel.addEventListener("focusin", function () {
+            isPaused = true;
+        });
+
+        panel.addEventListener("focusout", function () {
+            isPaused = false;
+        });
+
+        startAutoScroll();
     });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--cyan)' : '';
-    });
-  }, { passive: true });
 })();
 
-// Enquiry form: submit via AJAX so the page never redirects.
+
 // Contact form: submit via AJAX (Web3Forms) so the page never redirects.
 function handleSubmit(event) {
   event.preventDefault();
