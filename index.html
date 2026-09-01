@@ -1,306 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chematrix | Computational Fluid Dynamics (CFD) & Digitalization Solutions in India</title>
-  <meta name="description" content="We provide CFD & process engineering solutions, and customized software development for process industries across India and abroad." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computational Fluid Dynamics (CFD) Consultant in India | Process Digitalization | Chematrix Solutions</title>
+<meta name="description" content="Chematrix Solutions delivers advanced CFD consulting, process engineering and process digitalization for manufacturing industries across India and global markets.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <span class="logo-mark">⬡</span>
-        <span class="logo-text">CHEM<span class="logo-accent">atrix</span></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#capabilities">Capabilities</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-      </ul>
-      <button class="nav-burger" id="burger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="Chematrix Solutions logo" class="brand-logo">
+      <span>Chematrix Solutions</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#0A375F" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
     </div>
-    <div class="nav-mobile" id="mobileMenu">
-      <a href="#services">Services</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
-      <a href="#contact">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="mesh-grid"></div>
+  <div class="hero-field" aria-hidden="true">
+    <div class="homepage-background" aria-hidden="true">
+      <img src="assets/Homepagebackgrnd1.png" alt="">
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <canvas id="cfdCanvas"></canvas>
-    <div class="hero-content">
-      <div class="hero-tag"><span class="tag-dot"></span>CFD · Digitalization · Optimization</div>
-      <h1 class="hero-title">
-        Engineering the<br/>
-        <span class="title-gradient">Invisible Flow</span>
-      </h1>
-      <p class="hero-sub">
-        We transform complex fluid dynamics, process inefficiencies, and engineering challenges
-        into precise, simulation-driven digital solutions.
-      </p>
-      <div class="hero-actions">
-        <a href="#services" class="btn-primary">Explore Solutions</a>
-        <a href="#contact" class="btn-ghost">Start a Project →</a>
-      </div>
-      <!--
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-val">98%</span><span class="stat-label">Simulation Accuracy</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-val">150+</span><span class="stat-label">Projects Delivered</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-val">12+</span><span class="stat-label">Industry Sectors</span></div>
-      </div>
-      -->
+  </div>
+  <div class="wrap hero-layout">
+    <div class="hero-copy">
+      <h1 data-text="Chematrix Solutions">Chematrix Solutions</h1>
+      <p class="hero-lede">where Computational Fluid Dynamics (CFD) meets Advanced Digitalization</p>
     </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <div class="hero-visual reveal">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-label="CFD simulation and digital dashboard visualization"
+      >
+        <source src="assets/HomePageVisuals.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">What We Do</div>
-        <h2>Three Pillars of<br/>Engineering Excellence</h2>
-      </div>
-      <div class="services-grid">
+<!-- ============ Core Capabilities and Our Services ============ -->
+<div class="wpb_wrapper services-section">
 
-        <div class="service-card" data-index="01">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M8 36 C12 20, 24 16, 24 8 C24 16, 36 20, 40 36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M4 28 C10 24, 20 22, 24 14 C28 22, 38 24, 44 28" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
-              <circle cx="24" cy="8" r="2.5" fill="currentColor"/>
-              <line x1="8" y1="38" x2="40" y2="38" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <h3>CFD Simulation</h3>
-          <p>High-fidelity computational fluid dynamics modeling for heat transfer, turbulence, multiphase flows, and reactive systems — validated against real-world data.</p>
-          <ul class="service-tags">
-            <li>Turbulence Modeling</li>
-            <li>Heat Transfer</li>
-            <li>Multiphase Flow</li>
-            <li>Reactive CFD</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
+    <div class="services-grid">
+
+        <!-- Project Outsourcing -->
+        <div class="service-flip-card">
+            <div class="service-flip-inner">
+
+                <!-- Front -->
+                <div class="service-face service-front">
+                    <div class="service-image-area">
+                        <img
+                            src="assets/CFDlogo.png"
+                            alt="CFD"
+                        >
+                    </div>
+
+                    <div class="service-title">
+                        <h3>Computational Fluid Dynamics (CFD)</h3>
+                    </div>
+                </div>
+
+                <!-- Back -->
+                <div class="service-face service-back">
+                    <div class="service-back-content">
+                        <span class="service-small-label"> </span>
+
+                        <h3>Computational Fluid Dynamics (CFD)</h3>
+
+                        <p>
+                            Get reliable technical support and complete project
+                            execution from planning through delivery.
+                        </p>
+
+                        <a href="/CFD/" class="service-button">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="service-card featured" data-index="02">
-          <div class="service-badge">Core Service</div>
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none">
-              <rect x="6" y="10" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-              <rect x="26" y="10" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-              <rect x="16" y="30" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
-              <line x1="14" y1="22" x2="24" y2="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,2"/>
-              <line x1="34" y1="22" x2="28" y2="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3,2"/>
-            </svg>
-          </div>
-          <h3>Process Optimization</h3>
-          <p>Data-driven optimization of industrial processes — reducing energy consumption, maximizing yield, and eliminating bottlenecks using digital twin methodologies.</p>
-          <ul class="service-tags">
-            <li>Digital Twin</li>
-            <li>Energy Efficiency</li>
-            <li>Yield Optimization</li>
-            <li>Root Cause Analysis</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
+
+        <!-- Process Optimization -->
+        <div class="service-flip-card">
+            <div class="service-flip-inner">
+
+                <div class="service-face service-front">
+                    <div class="service-image-area">
+                        <img
+                            src="assets/Digitalizationlogo.png"
+                            alt="Digitalization"
+                        >
+                    </div>
+
+                    <div class="service-title">
+                        <h3>Digitalization</h3>
+                    </div>
+                </div>
+
+                <div class="service-face service-back">
+                    <div class="service-back-content">
+                        <span class="service-small-label"> </span>
+
+                        <h3>Digitalization</h3>
+
+                        <p>
+                            Improve process efficiency, reduce operating costs,
+                            and achieve better production performance.
+                        </p>
+
+                        <a href="/digitalization/" class="service-button">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="service-card" data-index="03">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none">
-              <polyline points="6,36 14,24 22,28 30,16 38,20 42,12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="6" y="6" width="36" height="36" rx="2" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-              <circle cx="22" cy="28" r="2" fill="currentColor"/>
-              <circle cx="30" cy="16" r="2" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3>Software Development</h3>
-          <p>Custom engineering software, simulation dashboards, automation scripts, and API integrations — built for technical teams who need precision tools that work.</p>
-          <ul class="service-tags">
-            <li>Simulation Dashboards</li>
-            <li>Process Automation</li>
-            <li>Data Pipelines</li>
-            <li>Engineering APIs</li>
-          </ul>
-          <a href="#contact" class="service-link">Learn more →</a>
-        </div>
-
-      </div>
     </div>
-  </section>
+</div>
 
-  <!-- CAPABILITIES -->
-  <section class="capabilities" id="capabilities">
-    <div class="container">
-      <div class="cap-layout">
-        <div class="cap-left">
-          <div class="eyebrow">Technical Depth</div>
-          <h2>Built on<br/>Simulation Science</h2>
-          <p class="cap-desc">Our team combines chemical engineering expertise with modern computational methods. We don't use black-box tools — we build and validate every model from first principles.</p>
-          <a href="#contact" class="btn-primary">Discuss Your Challenge</a>
-        </div>
-        <div class="cap-right">
-          <div class="cap-table">
-            <div class="cap-row header-row">
-              <span>Domain</span>
-              <span>Tools & Methods</span>
-            </div>
-            <div class="cap-row">
-              <span class="cap-domain">Fluid Dynamics</span>
-              <span class="cap-tools">OpenFOAM</span>
-            </div>
-            <div class="cap-row">
-              <span class="cap-domain">Process Sim</span>
-              <span class="cap-tools">DWSIM</span>
-            </div>
-            <div class="cap-row">
-              <span class="cap-domain">Data Science & Computer Vision</span>
-              <span class="cap-tools">Python, TensorFlow, scikit-learn, OpenCV</span>
-            </div>
-            <div class="cap-row">
-              <span class="cap-domain">Visualization</span>
-              <span class="cap-tools">ParaView, Plotly, Three.js</span>
-            </div>
-            <!--
-            <div class="cap-row">
-              <span class="cap-domain">Automation</span>
-              <span class="cap-tools">REST APIs, SCADA, OPC-UA</span>
-            </div>
-            <div class="cap-row">
-              <span class="cap-domain">Cloud / HPC</span>
-              <span class="cap-tools">AWS, Azure, Slurm HPC clusters</span>
-            </div>
-            -->
-          </div>
-        </div>
-      </div>
+<!-- ============ How We work Section ============ -->
+
+<section class="how-we-work-section" id="how-we-work">
+    <div class="how-we-work-container">
+
+        <span class="section-tag">HOW WE WORK</span>
+
+        <p class="how-we-work-description">
+            From understanding the problem to delivering the right solution,
+            we work closely with our customers to build trusted and long-term
+            partnerships.
+        </p>
+
     </div>
-  </section>
+</section>
 
-  <!-- INDUSTRIES -->
-  <section class="industries">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Industries</div>
-        <h2>Where Precision Matters Most</h2>
-      </div>
-      <div class="industry-grid">
-        <div class="industry-item"><div class="ind-icon">⚗️</div><span>Chemical Processing</span></div>
-        <div class="industry-item"><div class="ind-icon">🛢️</div><span>Oil & Gas</span></div>
-        <div class="industry-item"><div class="ind-icon">⚡</div><span>Power Generation</span></div>
-        <div class="industry-item"><div class="ind-icon">💧</div><span>Water Treatment</span></div>
-        <div class="industry-item"><div class="ind-icon">🏭</div><span>Manufacturing</span></div>
-        <div class="industry-item"><div class="ind-icon">🌿</div><span>Renewable Energy</span></div>
-      </div>
+
+<!-- ============ Case Studies Section ============ -->
+<section class="case-studies-section" id="case-studies">
+
+    <div class="case-studies-container">
+
+        <!-- Section heading -->
+        <div class="case-studies-heading">
+            <span class="case-studies-eyebrow"> </span>
+
+            <h2>
+                
+            </h2>
+
+        </div>
+
+        <!-- Case-study tabs -->
+        <div class="case-study-tabs"
+             role="tablist"
+             aria-label="Case study categories">
+
+            <button
+                class="case-study-tab is-active"
+                id="cfd-tab"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="cfd-panel"
+                data-panel="cfd-panel">
+                CFD Case Studies
+            </button>
+
+            <button
+                class="case-study-tab"
+                id="digitalization-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="digitalization-panel"
+                data-panel="digitalization-panel">
+                Digitalization Case Studies
+            </button>
+
+        </div>
+
+        <!-- CFD panel -->
+        <div
+            class="case-study-panel is-active"
+            id="cfd-panel"
+            role="tabpanel"
+            aria-labelledby="cfd-tab">
+
+            <div class="case-study-carousel">
+
+                <button
+                    class="carousel-control carousel-prev"
+                    type="button"
+                    aria-label="Previous CFD case study">
+                    &#8592;
+                </button>
+
+                <div
+                    class="case-study-track"
+                    tabindex="0"
+                    aria-label="CFD case studies">
+
+                    <!-- CFD Case Study 1 -->
+                    <article class="case-study-card">
+                        <a
+                            href="/case-studies/cfd/"
+                            class="case-study-card-link">
+
+                            <div class="case-study-image">
+                                <img
+                                    src="assets/cfd-thermal-analysis.png"
+                                    alt="CFD thermal analysis visualization"
+                                    loading="lazy">
+                                <span class="case-study-category">
+                                    CFD
+                                </span>
+                            </div>
+
+                            <div class="case-study-content">
+                                <span class="case-study-number">01</span>
+
+                                <h3>Thermal Performance Analysis</h3>
+
+                                <p>
+                                    Evaluating temperature distribution and
+                                    heat-transfer behavior to improve system
+                                    performance.
+                                </p>
+
+                                <span class="case-study-read-more">
+                                    View Case Study <span>→</span>
+                                </span>
+                            </div>
+
+                        </a>
+                    </article>
+
+                    <!-- CFD Case Study 2 -->
+                    <article class="case-study-card">
+                        <a
+                            href="/case-studies/cfd/"
+                            class="case-study-card-link">
+
+                            <div class="case-study-image">
+                                <img
+                                    src="assets/cfd-flow-optimization.png"
+                                    alt="CFD flow optimization visualization"
+                                    loading="lazy">
+                                <span class="case-study-category">
+                                    CFD
+                                </span>
+                            </div>
+
+                            <div class="case-study-content">
+                                <span class="case-study-number">02</span>
+
+                                <h3>Flow Optimization</h3>
+
+                                <p>
+                                    Using flow modeling to identify design
+                                    improvements and reduce unwanted pressure
+                                    losses.
+                                </p>
+
+                                <span class="case-study-read-more">
+                                    View Case Study <span>→</span>
+                                </span>
+                            </div>
+
+                        </a>
+                    </article>
+
+                    <!-- CFD Case Study 3 -->
+                    <article class="case-study-card">
+                        <a
+                            href="/case-studies/cfd/"
+                            class="case-study-card-link">
+
+                            <div class="case-study-image">
+                                <img
+                                    src="assets/cfd-combustion-modeling.png"
+                                    alt="CFD combustion modeling visualization"
+                                    loading="lazy">
+                                <span class="case-study-category">
+                                    CFD
+                                </span>
+                            </div>
+
+                            <div class="case-study-content">
+                                <span class="case-study-number">03</span>
+
+                                <h3>Combustion Modeling</h3>
+
+                                <p>
+                                    Modeling combustion behavior, temperature
+                                    fields, and operating conditions for
+                                    improved process understanding.
+                                </p>
+
+                                <span class="case-study-read-more">
+                                    View Case Study <span>→</span>
+                                </span>
+                            </div>
+
+                        </a>
+                    </article>
+
+                </div>
+
+                <button
+                    class="carousel-control carousel-next"
+                    type="button"
+                    aria-label="Next CFD case study">
+                    &#8594;
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Digitalization panel -->
+        <div
+            class="case-study-panel"
+            id="digitalization-panel"
+            role="tabpanel"
+            aria-labelledby="digitalization-tab"
+            hidden>
+
+            <div class="case-study-carousel">
+
+                <button
+                    class="carousel-control carousel-prev"
+                    type="button"
+                    aria-label="Previous digitalization case study">
+                    &#8592;
+                </button>
+
+                <div
+                    class="case-study-track"
+                    tabindex="0"
+                    aria-label="Digitalization case studies">
+
+                    <!-- Digitalization Case Study 1 -->
+                    <article class="case-study-card">
+                        <a
+                            href="/case-studies/digitalization/"
+                            class="case-study-card-link">
+
+                            <div class="case-study-image">
+                                <img
+                                    src="assets/digital-dashboard.png"
+                                    alt="Industrial digital dashboard"
+                                    loading="lazy">
+                                <span class="case-study-category">
+                                    DIGITALIZATION
+                                </span>
+                            </div>
+
+                            <div class="case-study-content">
+                                <span class="case-study-number">01</span>
+
+                                <h3>Engineering Dashboard</h3>
+
+                                <p>
+                                    Converting engineering calculations and
+                                    operational data into an interactive
+                                    decision-support dashboard.
+                                </p>
+
+                                <span class="case-study-read-more">
+                                    View Case Study <span>→</span>
+                                </span>
+                            </div>
+
+                        </a>
+                    </article>
+
+                    <!-- Digitalization Case Study 2 -->
+                    <article class="case-study-card">
+                        <a
+                            href="/case-studies/digitalization/"
+                            class="case-study-card-link">
+
+                            <div class="case-study-image">
+                                <img
+                                    src="assets/process-automation.png"
+                                    alt="Industrial process automation interface"
+                                    loading="lazy">
+                                <span class="case-study-category">
+                                    DIGITALIZATION
+                                </span>
+                            </div>
+
+                            <div class="case-study-content">
+                                <span class="case-study-number">02</span>
+
+                                <h3>Process Automation</h3>
+
+                                <p>
+                                    Automating repetitive engineering workflows
+                                    to reduce manual effort and improve
+                                    calculation consistency.
+                                </p>
+
+                                <span class="case-study-read-more">
+                                    View Case Study <span>→</span>
+                                </span>
+                            </div>
+
+                        </a>
+                    </article>
+
+                    <!-- Digitalization Case Study 3 -->
+                    <article class="case-study-card">
+                        <a
+                            href="/case-studies/digitalization/"
+                            class="case-study-card-link">
+
+                            <div class="case-study-image">
+                                <img
+                                    src="assets/defect-detection.png"
+                                    alt="AI-based industrial defect detection"
+                                    loading="lazy">
+                                <span class="case-study-category">
+                                    DIGITALIZATION
+                                </span>
+                            </div>
+
+                            <div class="case-study-content">
+                                <span class="case-study-number">03</span>
+
+                                <h3>Visual Defect Detection</h3>
+
+                                <p>
+                                    Applying computer vision to identify
+                                    manufacturing defects and support faster
+                                    quality inspection.
+                                </p>
+
+                                <span class="case-study-read-more">
+                                    View Case Study <span>→</span>
+                                </span>
+                            </div>
+
+                        </a>
+                    </article>
+
+                </div>
+
+                <button
+                    class="carousel-control carousel-next"
+                    type="button"
+                    aria-label="Next digitalization case study">
+                    &#8594;
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="case-studies-footer">
+            <p>
+                Looking for a solution to a similar engineering or business
+                challenge?
+            </p>
+
+            <a href="/contact/" class="case-study-button">
+                Start a Conversation <span>→</span>
+            </a>
+        </div>
+
     </div>
-  </section>
+</section>
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">How We Work</div>
-        <h2>From Problem to Solution</h2>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <div class="step-body">
-            <h4>Discovery & Scoping</h4>
-            <p>We begin by understanding your engineering challenge in detail — the physics, the constraints, the business impact, and the definition of success.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <div class="step-body">
-            <h4>Model Development</h4>
-            <p>We build and configure the simulation environment, selecting appropriate physical models, boundary conditions, and solver strategies for your specific system.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <div class="step-body">
-            <h4>Validation & Analysis</h4>
-            <p>Results are rigorously validated against experimental data or industry benchmarks. We quantify uncertainty and deliver insights — not just numbers.</p>
-          </div>
-        </div>
-        <div class="process-connector"></div>
-        <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <h4>Deliver & Deploy</h4>
-            <p>We hand over actionable recommendations, detailed reports, or deployed software tools — along with training and ongoing support for your team.</p>
-          </div>
-        </div>
-      </div>
+
+<!-- ============ BLOG PREVIEW ============ -->
+<section class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Knowledge Center</div>
+      <h2>Recent from the blog</h2>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-layout">
-        <div class="about-visual">
-          <div class="about-box">
-            <div class="ab-line">
-              <span class="ab-key">Founded</span>
-              <span class="ab-val">chematrix solutions LLP</span>
-            </div>
-            <div class="ab-line">
-              <span class="ab-key">Focus</span>
-              <span class="ab-val">CFD & Digitalization</span>
-            </div>
-            <div class="ab-line">
-              <span class="ab-key">Approach</span>
-              <span class="ab-val">First-principles modeling</span>
-            </div>
-            <div class="ab-line">
-              <span class="ab-key">Clients</span>
-              <span class="ab-val">Global, industrial sectors</span>
-            </div>
-            <div class="ab-line">
-              <span class="ab-key">Delivery</span>
-              <span class="ab-val">Reports · Software · Training</span>
-            </div>
-          </div>
-          <div class="about-mesh"></div>
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-thumb"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>CFD</span><span>·</span><span>8 min read</span></div>
+          <h3>How CFD Helps Optimize Industrial Pump Performance</h3>
         </div>
-        <div class="about-text">
-          <div class="eyebrow">About Us</div>
-          <h2>Rigorous Science.<br/>Practical Solutions.</h2>
-          <p>Chematrix Solutions was built around a single conviction: that the gap between simulation and real-world engineering decisions is a solvable problem. We bring together specialists in fluid mechanics, chemical engineering, data science, and software development to deliver solutions that are simultaneously technically rigorous and operationally practical.</p>
-          <p>Every engagement starts with the physics — not the software. We believe in building models that represent reality, not fitting reality to a convenient model.</p>
-          <div class="about-values">
-            <div class="value"><span class="val-icon">◈</span>Technical Rigor</div>
-            <div class="value"><span class="val-icon">◈</span>Transparent Methodology</div>
-            <div class="value"><span class="val-icon">◈</span>Results-Oriented</div>
-          </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-thumb"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>Process Digitalization</span><span>·</span><span>6 min read</span></div>
+          <h3>What Is Process Digitalization?</h3>
         </div>
-      </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-thumb"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>Heat Transfer</span><span>·</span><span>7 min read</span></div>
+          <h3>CFD Applications in Heat Exchanger Design</h3>
+        </div>
+      </article>
     </div>
-  </section>
+    <div class="cta-row" style="margin-top:36px;"><a href="blogs.html" class="btn btn-outline">Visit the Knowledge Center →</a></div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
+<!-- ============ CTA BANNER ============ -->
+<!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-layout">
@@ -433,6 +668,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
