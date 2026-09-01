@@ -1,0 +1,15 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#EFEBEB"/>
+  <rect x="40" y="40" width="320" height="220" fill="#06233D" rx="3"/>
+  <text x="60" y="72" font-family="JetBrains Mono, monospace" font-size="10" fill="#8FCBEF" letter-spacing="1">ENGINEERING DASHBOARD</text>
+  <line x1="60" y1="86" x2="340" y2="86" stroke="#1c5a86" stroke-width="1"/>
+  <polyline points="60,210 100,178 140,222 180,150 220,182 260,118 300,158 340,130" fill="none" stroke="#4FA9DD" stroke-width="1.8"/>
+  <circle cx="140" cy="222" r="3.4" fill="#E4A13B"/>
+  <circle cx="220" cy="182" r="3.4" fill="#E4A13B"/>
+  <circle cx="300" cy="158" r="3.4" fill="#E4A13B"/>
+  <rect x="60" y="232" width="26" height="16" fill="#12496F"/>
+  <rect x="96" y="220" width="26" height="28" fill="#12496F"/>
+  <rect x="132" y="205" width="26" height="43" fill="#4FA9DD" opacity=".65"/>
+  <rect x="168" y="224" width="26" height="24" fill="#12496F"/>
+  <rect x="204" y="210" width="26" height="38" fill="#12496F"/>
+</svg>
