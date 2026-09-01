@@ -56,57 +56,77 @@
     </div>
 
     <div class="case-grid">
-      <article class="case-card reveal" data-tags="cfd multiphase manufacturing">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><path class="stream-path" d="M0 75 C 60 40,110 110,160 75 S 260 40,300 80" stroke="#4FA9DD" stroke-width="1.4" fill="none"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Multiphase Flow</div>
-          <h3>Inline Mixing Efficiency in Static Mixers</h3>
-          <p>Evaluating blend uniformity and pressure-drop trade-offs across static mixer element geometries for an inline process stream.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="cfd equipment manufacturing">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><circle cx="150" cy="75" r="50" fill="none" stroke="#4FA9DD" stroke-width="1.4"/><circle cx="150" cy="75" r="30" fill="none" stroke="#8FCBEF" stroke-width="1.4"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">Process Optimization</div>
-          <h3>Co-firing Alternative Fuels — Rotary Kiln</h3>
-          <p>Combustion and thermal impact assessment of alternative fuel blends on kiln temperature profile and residence time.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="cfd heat manufacturing">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><g stroke="#4FA9DD" stroke-width="1.2" fill="none"><path class="stream-path" d="M20 40 H140"/><path class="stream-path" d="M20 75 H160"/><path class="stream-path" d="M20 110 H120"/></g></svg></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · HVAC</div>
-          <h3>Airflow Modeling Within HVAC Systems</h3>
-          <p>Mapping air distribution, velocity and thermal comfort zones for a critical manufacturing cleanroom environment.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="cfd equipment multiphase">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><path d="M150 20 L220 130 L80 130 Z" fill="none" stroke="#4FA9DD" stroke-width="1.4"/><circle cx="150" cy="90" r="6" fill="#E4A13B"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">Equipment Design</div>
-          <h3>Efficient Cyclone Separation (Gas–Solid, Liquid–Solid)</h3>
-          <p>Optimizing cyclone body and vortex-finder geometry to improve separation efficiency across two-phase duty conditions.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="cfd heat equipment">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><g stroke="#4FA9DD" stroke-width="1" opacity=".7"><line x1="20" y1="40" x2="280" y2="40"/><line x1="20" y1="75" x2="280" y2="75"/><line x1="20" y1="110" x2="280" y2="110"/></g><path class="stream-path" d="M20 55 C 100 20,200 100,280 55" stroke="#E4A13B" stroke-width="1.4" fill="none"/></svg></div>
+      <article class="case-card reveal" id="heat-exchanger" data-tags="cfd heat equipment">
+        <div class="case-thumb"><img src="assets/case-studies/heat-exchanger.jpg" alt="Shell-and-tube heat exchanger thermal CFD simulation" loading="lazy"></div>
         <div class="case-body">
           <div class="case-tag">CFD · Heat Transfer</div>
           <h3>Thermal Performance of Heat Exchanger</h3>
-          <p>Diagnosing flow maldistribution across tube passes as the driver of underperformance in a shell-and-tube unit.</p>
+          <p>ASME/TEMA-standard shell-and-tube units often hide baffle dead zones and pressure-drop blind spots that accelerate scaling. We optimize baffle and pass layout, model erosion, and build predictive diagnostics — cutting prototyping cost and speeding engineering sign-off.</p>
           <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
         </div>
       </article>
 
-      <article class="case-card reveal" data-tags="digitalization manufacturing">
+      <article class="case-card reveal" id="cyclone-separation" data-tags="cfd equipment multiphase manufacturing">
+        <div class="case-thumb"><img src="assets/case-studies/cyclone-separation.jpg" alt="Cyclone separator tangential velocity CFD simulation" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-tag">CFD · Multiphase Flow</div>
+          <h3>Efficient Cyclone Separation (Gas–Solid, Liquid–Solid)</h3>
+          <p>Internal flow imbalances and particle recirculation drive product carryover and excess pressure drop. Through multiphase flow profiling, discrete particle tracking, and targeted geometric refinement, we maximize separation efficiency and protect downstream assets.</p>
+          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal" id="combustion-efficiency" data-tags="cfd heat manufacturing">
+        <div class="case-thumb"><img src="assets/case-studies/combustion-efficiency.jpg" alt="Combustor static temperature CFD simulation" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-tag">CFD · Combustion</div>
+          <h3>Improved Combustion Efficiency</h3>
+          <p>Poor air-fuel mixing and localized hot spots drive slagging, emissions and unburned carbon loss. We run multiphase combustion modelling and Lagrangian particle tracking to optimize air-to-fuel ratios and lift boiler efficiency.</p>
+          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal" id="rotary-kiln" data-tags="cfd equipment manufacturing">
+        <div class="case-thumb"><img src="assets/case-studies/rotary-kiln.jpg" alt="Rotary kiln combustion flow CFD simulation" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-tag">CFD · Combustion</div>
+          <h3>Co-firing Alternative Fuels — Rotary Kiln</h3>
+          <p>Burner alignment and flame shape dictate heat transfer to the bed. Modelling turbulent gas combustion and granular bed flow coupling optimizes burner air-fuel injection — extending refractory life and cutting fuel and emissions.</p>
+          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal" id="stirred-tank" data-tags="cfd multiphase equipment">
+        <div class="case-thumb"><img src="assets/case-studies/stirred-tank.jpg" alt="Stirred tank impeller mixing CFD simulation" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-tag">CFD · Multiphase Flow</div>
+          <h3>Optimized Stirred Tank Design</h3>
+          <p>Traditional scale-up relies on empirical rules and costly prototyping. We simulate impeller selection, mixing kinetics, and micro/macro dispersion to guarantee batch uniformity and minimize dead zones and shear stress.</p>
+          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal" id="static-mixer" data-tags="cfd multiphase manufacturing">
+        <div class="case-thumb"><img src="assets/case-studies/static-mixer.jpg" alt="Static mixer inline mixing quality CFD simulation" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-tag">CFD · Multiphase Flow</div>
+          <h3>Inline Mixing Efficiency in Static Mixers</h3>
+          <p>Sealed inline mixers rely entirely on internal geometry and velocity to blend streams, leaving operators without flow visibility. We tune feeder configuration and element geometry to save pumping energy and eliminate downstream fouling.</p>
+          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal" id="hvac-airflow" data-tags="cfd heat manufacturing">
+        <div class="case-thumb"><img src="assets/case-studies/hvac-airflow.jpg" alt="HVAC air handling unit velocity CFD simulation" loading="lazy"></div>
+        <div class="case-body">
+          <div class="case-tag">CFD · HVAC</div>
+          <h3>Airflow Modeling Within HVAC Systems</h3>
+          <p>Air Handling Unit design battles airflow maldistribution and unpredictable component interaction. Turbomachinery modelling and velocity/pressure mapping enable virtual iteration — improving thermal efficiency and cutting energy use.</p>
+          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
+        </div>
+      </article>
+
+      <article class="case-card reveal" id="digitalization" data-tags="digitalization manufacturing">
         <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><rect x="40" y="30" width="90" height="90" fill="none" stroke="#4FA9DD" stroke-width="1.2"/><rect x="160" y="30" width="90" height="90" fill="#12496F" opacity=".4"/><polyline points="160,100 190,80 210,95 240,60" fill="none" stroke="#E4A13B" stroke-width="1.6"/></svg></div>
         <div class="case-body">
           <div class="case-tag">Process Digitalization · Computer Vision</div>
@@ -132,16 +152,6 @@
           <div class="case-tag">Process Digitalization</div>
           <h3>Predictive Maintenance Dashboard for Rotating Equipment</h3>
           <p>Building an early-warning dashboard from vibration and process signals to flag equipment degradation trends.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
-
-      <article class="case-card reveal" data-tags="cfd multiphase heat">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><ellipse cx="150" cy="75" rx="90" ry="55" fill="none" stroke="#4FA9DD" stroke-width="1.4"/><path d="M70 75 C 100 40,200 110,230 75" stroke="#8FCBEF" stroke-width="1.4" fill="none" class="stream-path"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Multiphase Flow</div>
-          <h3>Multiphase Mixing Reactor Performance</h3>
-          <p>Transient CFD to assess blend time and identify dead zones inside a stirred multiphase reactor vessel.</p>
           <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
         </div>
       </article>
