@@ -1,222 +1,902 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Studies | CFD &amp; Process Digitalization Projects | Chematrix Solutions</title>
-<meta name="description" content="Explore CFD, process digitalization, heat transfer and equipment design case studies from Chematrix Solutions.">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Case Studies | CFD & Process Digitalization | Chematrix Solutions</title>
+
+  <meta
+    name="description"
+    content="Explore CFD and process digitalization case studies from Chematrix Solutions."
+  >
+
+  <link rel="stylesheet" href="css/about.css">
+
+  <style>
+    /* =====================================================
+       CASE STUDY PAGE
+    ===================================================== */
+
+    .case-section {
+      padding: 90px 0;
+      background: #f6f9fc;
+    }
+
+    .case-category-tabs {
+      padding: 42px 0 0;
+    }
+
+    .case-category-tabs .wrap {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .case-section:nth-of-type(even) {
+      background: #ffffff;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 50px;
+    }
+
+    .section-heading .eyebrow {
+      color: #e4a13b;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      color: #0a375f;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0 0 18px;
+    }
+
+    .section-heading p {
+      color: #526779;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .case-study-list {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .case-study {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: stretch;
+      overflow: hidden;
+      background: #ffffff;
+      border: 1px solid #dce8f1;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(10, 55, 95, 0.07);
+    }
+
+    .case-study:nth-child(even) .case-study-image {
+      order: 2;
+    }
+
+    .case-study:nth-child(even) .case-study-content {
+      order: 1;
+    }
+
+    .case-study-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 330px;
+      padding: 22px;
+      background:
+        linear-gradient(135deg, rgba(10, 55, 95, 0.94), rgba(18, 73, 111, 0.88)),
+        radial-gradient(circle at top right, #4fa9dd, transparent 45%);
+    }
+
+    .case-study-image img {
+      display: block;
+      width: 50%;
+      max-width: 50%;
+      height: auto;
+      max-height: 390px;
+      object-fit: contain;
+      resize: both;
+      overflow: auto;
+      border-radius: 10px;
+      background: #ffffff;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .case-study-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 42px;
+    }
+
+    .case-tag {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 15px;
+      color: #e4a13b;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .case-study-content h3 {
+      margin: 0 0 16px;
+      color: #0a375f;
+      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      line-height: 1.25;
+    }
+
+    .case-study-content p {
+      margin: 0 0 18px;
+      color: #526779;
+      line-height: 1.75;
+    }
+
+    .case-study-content ul {
+      margin: 0 0 22px;
+      padding-left: 20px;
+      color: #526779;
+      line-height: 1.8;
+    }
+
+    .case-study-content li::marker {
+      color: #e4a13b;
+    }
+
+    .case-link {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 4px;
+      color: #0a5f92;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .case-link:hover {
+      color: #e4a13b;
+    }
+
+    .digitalization-section {
+      background: #ffffff;
+    }
+
+    .placeholder-image {
+      width: 100%;
+      min-height: 245px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      color: #ffffff;
+      text-align: center;
+      border: 1px dashed rgba(255, 255, 255, 0.65);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(79, 169, 221, 0.24), rgba(10, 55, 95, 0.25)),
+        repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.04) 10px,
+          transparent 10px,
+          transparent 20px
+        );
+    }
+
+    .placeholder-image span {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 850px) {
+      .case-study {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study:nth-child(even) .case-study-image,
+      .case-study:nth-child(even) .case-study-content {
+        order: initial;
+      }
+
+      .case-study-image {
+        min-height: 260px;
+      }
+
+      .case-study-content {
+        padding: 30px 25px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .case-section {
+        padding: 60px 0;
+      }
+
+      .case-study-image {
+        padding: 15px;
+      }
+
+      .case-study-content {
+        padding: 25px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand">
+        <img
+          src="assets/logo.png"
+          alt="Chematrix Solutions logo"
+          class="brand-logo"
+        >
+        <span>Chematrix Solutions</span>
+      </a>
 
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="case-studies.html">Our Services</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-<nav class="nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">
-      <img src="assets/logo.png" alt="Chematrix Solutions logo" class="brand-logo">
-      <span>Chematrix Solutions</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html"></a>Home</li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Our Services</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li>
-      <li><a href="blogs.html">Blogs</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#0A375F" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="#0A375F"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+<!-- /* ******************************************************************************** */
+/* ************************* HERO-Home Page Starts ******************************** */ -->
+<header class="hero">
+  <div class="mesh-grid"></div>
+  <div class="hero-field" aria-hidden="true">
+    <div class="homepage-background" aria-hidden="true">
+      <img src="assets/Homepagebackgrnd1.png" alt="" />
+    </div>
+  </div>
+
+  <div class="wrap hero-layout">
+    <!-- Left: text -->
+    <div class="hero-copy">
+      <h1 data-text="CHEMATRIX SOLUTIONS">CHEMATRIX SOLUTIONS</h1>
+      <p class="hero-lede">
+        where Computational Fluid Dynamics (CFD) meets Advanced
+        Digitalization
+      </p>
+    </div>
+
+  </header>
+
+  <div class="case-category-tabs" role="tablist" aria-label="Case study categories">
+    <div class="wrap">
+      <button
+        class="case-study-tab is-active"
+        id="cfd-category-tab"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="cfd-case-section"
+        data-case-section="cfd-case-section"
+      >
+        Computational Fluid Dynamics (CFD)
+      </button>
+      <button
+        class="case-study-tab"
+        id="digitalization-category-tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="digitalization-case-section"
+        data-case-section="digitalization-case-section"
+      >
+        Digitalization
       </button>
     </div>
   </div>
-</nav>
 
-<header class="page-hero">
-  <div class="mesh-grid"></div>
-  <div class="wrap" style="position:relative;z-index:2;">
-    <div class="breadcrumb">HOME / CASE STUDIES</div>
-    <h1>Engineering challenges, simulated and solved</h1>
-    <p>A library of representative CFD and process digitalization work across mixing, thermal, separation and inspection problems.</p>
-  </div>
-</header>
+  <!-- CFD Case Studies -->
+  <section
+    class="case-section cfd-section"
+    id="cfd-case-section"
+    role="tabpanel"
+    aria-labelledby="cfd-category-tab"
+  >
+    <div class="wrap">
 
-<section class="cases">
-  <div class="wrap">
-    <div class="case-filters reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="cfd">CFD</button>
-      <button class="filter-btn" data-filter="digitalization">Process Digitalization</button>
-      <button class="filter-btn" data-filter="heat">Heat Transfer</button>
-      <button class="filter-btn" data-filter="equipment">Equipment Design</button>
-      <button class="filter-btn" data-filter="multiphase">Multiphase Flow</button>
-      <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+      <div class="section-heading">
+        <div class="eyebrow">Category 01</div>
+        <h2>CFD & Simulation Case Studies</h2>
+        <p>
+          First-principles simulation for improving flow distribution, heat
+          transfer, combustion, mixing, separation and equipment performance.
+        </p>
+      </div>
+
+      <div class="case-study-list">
+
+        <!-- CFD Case 1: Image Left -->
+        <article class="case-study" id="heat-exchanger">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/heat-exchanger.jpg"
+              alt="Shell-and-tube heat exchanger thermal CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · Heat Transfer</div>
+
+            <h3>Thermal Performance of Heat Exchanger</h3>
+
+            <p>
+              ASME/TEMA-standard shell-and-tube units can hide baffle dead zones
+              and pressure-drop blind spots that accelerate scaling. We optimize
+              baffle and pass layout, model erosion and build predictive
+              diagnostics to reduce prototyping cost and speed engineering
+              sign-off.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- CFD Case 2: Text Left, Image Right -->
+        <article class="case-study" id="cyclone-separation">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/cyclone-separation.jpg"
+              alt="Cyclone separator gas-solid multiphase CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · Multiphase Flow</div>
+
+            <h3>Efficient Cyclone Separation</h3>
+
+            <p>
+              Internal flow imbalances and particle recirculation can drive
+              product carryover and excess pressure drop. Through multiphase
+              flow profiling, discrete particle tracking and targeted geometric
+              refinement, we improve separation efficiency and protect
+              downstream assets.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- CFD Case 3: Image Left -->
+        <article class="case-study" id="combustion-efficiency">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/combustion-efficiency.jpg"
+              alt="Combustor static temperature CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · Combustion</div>
+
+            <h3>Improved Combustion Efficiency</h3>
+
+            <p>
+              Poor air-fuel mixing and localized hot spots can cause slagging,
+              emissions and unburned carbon loss. We apply multiphase combustion
+              modelling and Lagrangian particle tracking to optimize air-to-fuel
+              ratios and improve boiler efficiency.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- CFD Case 4: Text Left, Image Right -->
+        <article class="case-study" id="rotary-kiln">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/rotary-kiln.jpg"
+              alt="Rotary kiln combustion flow CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · Combustion</div>
+
+            <h3>Co-firing Alternative Fuels in a Rotary Kiln</h3>
+
+            <p>
+              Burner alignment and flame shape dictate heat transfer to the
+              material bed. Modelling turbulent gas combustion and granular bed
+              flow coupling helps optimize burner air-fuel injection, extend
+              refractory life and reduce fuel consumption and emissions.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- CFD Case 5: Image Left -->
+        <article class="case-study" id="stirred-tank">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/stirred-tank.jpg"
+              alt="Stirred tank impeller mixing CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · Multiphase Flow</div>
+
+            <h3>Optimized Stirred Tank Design</h3>
+
+            <p>
+              Traditional scale-up often relies on empirical rules and costly
+              prototyping. We simulate impeller selection, mixing kinetics and
+              micro- and macro-dispersion to improve batch uniformity while
+              minimizing dead zones and shear stress.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- CFD Case 6: Text Left, Image Right -->
+        <article class="case-study" id="static-mixer">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/static-mixer.jpg"
+              alt="Static mixer inline mixing CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · Multiphase Flow</div>
+
+            <h3>Inline Mixing Efficiency in Static Mixers</h3>
+
+            <p>
+              Sealed inline mixers rely on internal geometry and velocity to
+              blend streams, leaving operators without direct flow visibility.
+              We tune feeder configuration and element geometry to reduce
+              pumping energy and downstream fouling.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- CFD Case 7: Image Left -->
+        <article class="case-study" id="hvac-airflow">
+          <div class="case-study-image">
+            <img
+              src="assets/case-studies/hvac-airflow.jpg"
+              alt="HVAC air handling unit airflow CFD simulation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">CFD · HVAC</div>
+
+            <h3>Airflow Modeling Within HVAC Systems</h3>
+
+            <p>
+              Air handling unit design often involves airflow maldistribution
+              and unpredictable component interaction. Turbomachinery modelling
+              and velocity and pressure mapping enable virtual iteration,
+              improving thermal efficiency and reducing energy use.
+            </p>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+      </div>
     </div>
+  </section>
 
-    <div class="case-grid">
-      <article class="case-card reveal" id="heat-exchanger" data-tags="cfd heat equipment">
-        <div class="case-thumb"><img src="assets/case-studies/heat-exchanger.jpg" alt="Shell-and-tube heat exchanger thermal CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Heat Transfer</div>
-          <h3>Thermal Performance of Heat Exchanger</h3>
-          <p>ASME/TEMA-standard shell-and-tube units often hide baffle dead zones and pressure-drop blind spots that accelerate scaling. We optimize baffle and pass layout, model erosion, and build predictive diagnostics — cutting prototyping cost and speeding engineering sign-off.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+  <!-- Digitalization Case Studies -->
+  <section
+    class="case-section digitalization-section"
+    id="digitalization-case-section"
+    role="tabpanel"
+    aria-labelledby="digitalization-category-tab"
+    hidden
+  >
+    <div class="wrap">
 
-      <article class="case-card reveal" id="cyclone-separation" data-tags="cfd equipment multiphase manufacturing">
-        <div class="case-thumb"><img src="assets/case-studies/cyclone-separation.jpg" alt="Cyclone separator tangential velocity CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Multiphase Flow</div>
-          <h3>Efficient Cyclone Separation (Gas–Solid, Liquid–Solid)</h3>
-          <p>Internal flow imbalances and particle recirculation drive product carryover and excess pressure drop. Through multiphase flow profiling, discrete particle tracking, and targeted geometric refinement, we maximize separation efficiency and protect downstream assets.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+      <div class="section-heading">
+        <div class="eyebrow">Category 02</div>
+        <h2>Process Digitalization Case Studies</h2>
+        <p>
+          Customized dashboards, analytics platforms and AI-enabled tools that
+          turn engineering and operational data into actionable decisions.
+        </p>
+      </div>
 
-      <article class="case-card reveal" id="combustion-efficiency" data-tags="cfd heat manufacturing">
-        <div class="case-thumb"><img src="assets/case-studies/combustion-efficiency.jpg" alt="Combustor static temperature CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Combustion</div>
-          <h3>Improved Combustion Efficiency</h3>
-          <p>Poor air-fuel mixing and localized hot spots drive slagging, emissions and unburned carbon loss. We run multiphase combustion modelling and Lagrangian particle tracking to optimize air-to-fuel ratios and lift boiler efficiency.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+      <div class="case-study-list">
 
-      <article class="case-card reveal" id="rotary-kiln" data-tags="cfd equipment manufacturing">
-        <div class="case-thumb"><img src="assets/case-studies/rotary-kiln.jpg" alt="Rotary kiln combustion flow CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Combustion</div>
-          <h3>Co-firing Alternative Fuels — Rotary Kiln</h3>
-          <p>Burner alignment and flame shape dictate heat transfer to the bed. Modelling turbulent gas combustion and granular bed flow coupling optimizes burner air-fuel injection — extending refractory life and cutting fuel and emissions.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+        <!-- Digitalization Case 1: Image Left -->
+        <article class="case-study" id="laboratory-dashboard">
+          <div class="case-study-image">
+            <!-- Replace with your actual image -->
+            <img
+              src="assets/case-studies/laboratory-dashboard.png"
+              alt="Laboratory sample management dashboard"
+              loading="lazy"
+            >
+          </div>
 
-      <article class="case-card reveal" id="stirred-tank" data-tags="cfd multiphase equipment">
-        <div class="case-thumb"><img src="assets/case-studies/stirred-tank.jpg" alt="Stirred tank impeller mixing CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Multiphase Flow</div>
-          <h3>Optimized Stirred Tank Design</h3>
-          <p>Traditional scale-up relies on empirical rules and costly prototyping. We simulate impeller selection, mixing kinetics, and micro/macro dispersion to guarantee batch uniformity and minimize dead zones and shear stress.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+          <div class="case-study-content">
+            <div class="case-tag">
+              Process Digitalization · Laboratory Analytics
+            </div>
 
-      <article class="case-card reveal" id="static-mixer" data-tags="cfd multiphase manufacturing">
-        <div class="case-thumb"><img src="assets/case-studies/static-mixer.jpg" alt="Static mixer inline mixing quality CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · Multiphase Flow</div>
-          <h3>Inline Mixing Efficiency in Static Mixers</h3>
-          <p>Sealed inline mixers rely entirely on internal geometry and velocity to blend streams, leaving operators without flow visibility. We tune feeder configuration and element geometry to save pumping energy and eliminate downstream fouling.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+            <h3>Laboratory Sample Management Dashboard</h3>
 
-      <article class="case-card reveal" id="hvac-airflow" data-tags="cfd heat manufacturing">
-        <div class="case-thumb"><img src="assets/case-studies/hvac-airflow.jpg" alt="HVAC air handling unit velocity CFD simulation" loading="lazy"></div>
-        <div class="case-body">
-          <div class="case-tag">CFD · HVAC</div>
-          <h3>Airflow Modeling Within HVAC Systems</h3>
-          <p>Air Handling Unit design battles airflow maldistribution and unpredictable component interaction. Turbomachinery modelling and velocity/pressure mapping enable virtual iteration — improving thermal efficiency and cutting energy use.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+            <p>
+              Laboratories often manage sample information across multiple
+              systems, spreadsheets and manual processes. As sample volumes
+              grow, this can result in limited visibility, slower decision-making
+              and increased administrative effort.
+            </p>
 
-      <article class="case-card reveal" id="digitalization" data-tags="digitalization manufacturing">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><rect x="40" y="30" width="90" height="90" fill="none" stroke="#4FA9DD" stroke-width="1.2"/><rect x="160" y="30" width="90" height="90" fill="#12496F" opacity=".4"/><polyline points="160,100 190,80 210,95 240,60" fill="none" stroke="#E4A13B" stroke-width="1.6"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">Process Digitalization · Computer Vision</div>
-          <h3>Automated Defect Detection with Computer Vision</h3>
-          <p>Deploying a vision-based inspection model to flag surface defects on a manufacturing line in real time.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+            <p>
+              We developed a centralized dashboard for tracking sample
+              submissions, businesses, collection dates and sample types.
+              Visual analytics and recent-submission data provide an immediate
+              view of sample activity and support report generation after
+              completion.
+            </p>
 
-      <article class="case-card reveal" data-tags="digitalization heat">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><polyline points="20,120 60,90 100,110 140,60 180,85 220,40 260,70" fill="none" stroke="#E4A13B" stroke-width="1.6"/><circle cx="140" cy="60" r="4" fill="#E4A13B"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">Process Digitalization</div>
-          <h3>Custom Heat Exchanger Sizing Tool</h3>
-          <p>Replacing spreadsheet-based rating calculations with a standardized, reusable sizing interface for the design team.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+            <ul>
+              <li>Sample receipt and processing overview.</li>
+              <li>Business-wise submission tracking.</li>
+              <li>Sample type and collection-date analysis.</li>
+              <li>Identification of samples requiring attention.</li>
+            </ul>
 
-      <article class="case-card reveal" data-tags="digitalization equipment manufacturing">
-        <div class="case-thumb"><svg viewBox="0 0 300 150" width="100%" height="100%"><rect x="30" y="70" width="30" height="50" fill="#12496F" opacity=".5"/><rect x="80" y="50" width="30" height="70" fill="#4FA9DD" opacity=".6"/><rect x="130" y="90" width="30" height="30" fill="#12496F" opacity=".5"/><rect x="180" y="40" width="30" height="80" fill="#12496F" opacity=".5"/><circle cx="240" cy="55" r="5" fill="#E4A13B" class="node-pulse"/></svg></div>
-        <div class="case-body">
-          <div class="case-tag">Process Digitalization</div>
-          <h3>Predictive Maintenance Dashboard for Rotating Equipment</h3>
-          <p>Building an early-warning dashboard from vibration and process signals to flag equipment degradation trends.</p>
-          <a class="case-link" href="contact.html">Discuss a Similar Project →</a>
-        </div>
-      </article>
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- Digitalization Case 2: Text Left, Image Right -->
+        <article class="case-study" id="data-analytics-software">
+          <div class="case-study-image">
+            <!-- Replace with your actual image -->
+            <img
+              src="assets/case-studies/data-analytics-software.png"
+              alt="Customized data analytics software interface"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">
+              Process Digitalization · Data Analytics
+            </div>
+
+            <h3>Customized Data Analytics Software</h3>
+
+            <p>
+              Large laboratory and production datasets can contain numerical
+              measurements, categorical variables, missing values, outliers and
+              several related features. Opening a spreadsheet alone does not
+              provide enough context to understand data quality or identify
+              meaningful patterns.
+            </p>
+
+            <p>
+              The solution creates a structured analytical workflow beginning
+              with data sourcing and progressing through preprocessing,
+              exploratory data analysis, control charts and machine-learning
+              models.
+            </p>
+
+            <ul>
+              <li>Automated summary statistics.</li>
+              <li>Correlation and distribution analysis.</li>
+              <li>Statistical process control charts.</li>
+              <li>Design of experiments and hypothesis testing.</li>
+              <li>AI- and ML-ready analytical workflow.</li>
+            </ul>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- Digitalization Case 3: Image Left -->
+        <article class="case-study" id="defect-detection">
+          <div class="case-study-image">
+            <!-- Replace with your actual image -->
+            <img
+              src="assets/case-studies/defect-detection-dashboard.png"
+              alt="AI-powered defect detection and quality analytics dashboard"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">
+              Process Digitalization · Computer Vision
+            </div>
+
+            <h3>AI-Powered Defect Detection & Quality Analytics</h3>
+
+            <p>
+              Semiconductor manufacturing requires extremely high production
+              quality. Even microscopic defects can affect wafer yield, device
+              reliability and manufacturing costs.
+            </p>
+
+            <p>
+              We developed a centralized defect analytics platform that gives
+              engineering and production teams a real-time overview of wafer
+              inspection performance. The dashboard combines computer-vision
+              inspection results, defect classification, performance metrics and
+              spatial heatmap visualization in one interface.
+            </p>
+
+            <ul>
+              <li>Real-time quality KPI monitoring.</li>
+              <li>Defect trend analysis.</li>
+              <li>Automated defect classification.</li>
+              <li>Wafer defect heatmap visualization.</li>
+              <li>AI model performance monitoring.</li>
+              <li>Centralized defect log.</li>
+            </ul>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- Digitalization Case 4: Text Left, Image Right -->
+        <article class="case-study" id="heat-exchanger-sizing-tool">
+          <div class="case-study-image">
+            <!-- Replace with your actual image -->
+            <img
+              src="assets/case-studies/heat-exchanger.jpg"
+              alt="Custom heat exchanger sizing and rating tool"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">
+              Process Digitalization · Engineering Software
+            </div>
+
+            <h3>Custom Heat Exchanger Sizing Tool</h3>
+
+            <p>
+              Spreadsheet-based heat exchanger calculations can be difficult to
+              standardize, maintain and review. We developed a reusable
+              engineering interface that organizes sizing and rating
+              calculations into a consistent workflow.
+            </p>
+
+            <p>
+              The tool helps design teams perform calculations faster, reduce
+              manual errors and create a repeatable basis for engineering
+              decisions.
+            </p>
+
+            <ul>
+              <li>Standardized engineering calculation workflow.</li>
+              <li>Reusable input and output structure.</li>
+              <li>Improved calculation traceability.</li>
+              <li>Faster review and design iteration.</li>
+            </ul>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+        <!-- Digitalization Case 5: Image Left -->
+        <article class="case-study" id="predictive-maintenance">
+          <div class="case-study-image">
+            <!-- Replace with your actual image -->
+            <img
+              src="assets/case-studies/data-analytics-software.png"
+              alt="Predictive maintenance dashboard for rotating equipment"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="case-study-content">
+            <div class="case-tag">
+              Process Digitalization · Predictive Maintenance
+            </div>
+
+            <h3>Predictive Maintenance Dashboard for Rotating Equipment</h3>
+
+            <p>
+              Rotating equipment degradation can develop gradually through
+              changes in vibration, operating conditions and process signals.
+              Without centralized monitoring, early warning indicators may be
+              difficult to identify.
+            </p>
+
+            <p>
+              We developed an early-warning dashboard that combines equipment
+              signals and process information to highlight degradation trends
+              and support condition-based maintenance decisions.
+            </p>
+
+            <ul>
+              <li>Equipment health monitoring.</li>
+              <li>Vibration and process-signal analysis.</li>
+              <li>Early-warning trend identification.</li>
+              <li>Centralized maintenance intelligence.</li>
+            </ul>
+
+            <a href="contact.html" class="case-link">
+              Discuss a Similar Project →
+            </a>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="cta-banner">
-  <div class="mesh-grid"></div>
-  <div class="wrap">
-    <h2>Have an Engineering Challenge?</h2>
-    <p>Let's transform your process engineering problem into a simulation, digital solution, or data-driven decision tool.</p>
-    <div class="cta-row">
-      <a href="contact.html" class="btn btn-primary">Talk to an Expert</a>
-      <a href="contact.html" class="btn btn-outline on-dark">Discuss Your Project</a>
-    </div>
-  </div>
-</section>
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="mesh-grid"></div>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#4FA9DD" stroke-width="1.4"/>
-            <path d="M6 16C10 12 14 20 18 16C21 13 24 18 27 16" stroke="#4FA9DD" stroke-width="1.4" fill="none"/>
-          </svg>
-          <span>Chematrix Solutions</span>
+    <div class="wrap">
+      <h2>Have an Engineering Challenge?</h2>
+
+      <p>
+        Let's transform your process engineering problem into a simulation,
+        digital solution or data-driven decision tool.
+      </p>
+
+      <div class="cta-row">
+        <a href="contact.html" class="btn btn-primary">
+          Talk to an Expert
         </a>
-        <p>One-stop partner for first-principle simulation and data-driven process digitalization across India and global manufacturing industries.</p>
-      </div>
-      <div>
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Our Services</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Capabilities</h4>
-        <ul>
-          <li><a href="services.html#cfd">CFD &amp; Simulation</a></li>
-          <li><a href="services.html#process">Process Engineering</a></li>
-          <li><a href="services.html#digital">Process Digitalization</a></li>
-          <li><a href="contact.html">Request a Consultation</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@chematrixsolutions.com">info@chematrixsolutions.com</a></li>
-          <li><a href="tel:+910000000000">+91‑XXXXX‑XXXXX</a></li>
-          <li>India · Global Delivery</li>
-        </ul>
+
+        <a href="contact.html" class="btn btn-outline on-dark">
+          Discuss Your Project
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Chematrix Solutions. All rights reserved.</span>
-      <span>CFD Consulting · Process Digitalization · Engineering Software · Data-Driven Solutions</span>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <img src="assets/logo.png" alt="Chematrix Solutions logo" class="brand-logo">
+            <span>Chematrix Solutions</span>
+          </a>
+
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Chematrix Solutions on LinkedIn"><span aria-hidden="true">in</span></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Chematrix Solutions on X"><span aria-hidden="true">X</span></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Capabilities</h4>
+
+          <ul>
+            <li><a href="services.html#cfd">CFD &amp; Simulation</a></li>
+            <li><a href="services.html#process">Process Engineering</a></li>
+            <li><a href="services.html#digital">Process Digitalization</a></li>
+            <li><a href="services.html#digital">Digital Twin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+
+          <ul>
+            <li>
+              <a href="mailto:info@chematrixsolutions.com">
+                info@chemmatrixsolutions.com
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+910000000000">
+                +91-XXXXX-XXXXX
+              </a>
+            </li>
+
+            <li>India · Middle East</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Chematrix Solutions. All rights reserved.</span>
+
+      </div>
     </div>
-  </div>
-</footer>
-<script src="js/main.js"></script>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
