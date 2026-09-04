@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Blog | CFD &amp; Process Digitalization Insights | Chematrix Solutions
+      Blogs | Chematrix Solutions — CFD, AI &amp; Manufacturing Digitalization
+      Insights
     </title>
     <meta
       name="description"
-      content="Technical articles on CFD, heat transfer, multiphase flow, process digitalization and industrial AI from Chematrix Solutions."
+      content="Insights from Chematrix Solutions on Computational Fluid Dynamics, AI and data analytics, and digital transformation for manufacturing industries."
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog.css" />
   </head>
   <body>
     <nav class="nav">
@@ -27,7 +28,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="case-studies.html">Our Services</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="blogs.html" class="is-active">Blogs</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-cta">
@@ -50,341 +51,1330 @@
       </div>
     </nav>
 
-    <header class="page-hero">
+    <header class="hero">
       <div class="mesh-grid"></div>
-      <div class="wrap" style="position: relative; z-index: 2">
-        <div class="breadcrumb">HOME / BLOGS</div>
-        <h1>The Chematrix Knowledge Center</h1>
-        <p>
-          Technical writing on CFD, process engineering and digitalization — for
-          engineers, plant managers and R&amp;D teams.
-        </p>
+      <div class="hero-field" aria-hidden="true">
+        <div class="homepage-background" aria-hidden="true">
+          <img src="assets/Homepagebackgrnd1.png" alt="" />
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="hero-copy">
+          <!-- <span class="hero-eyebrow">Knowledge Center</span> -->
+          <h1>Knowledge Center</h1>
+          <p class="hero-lede">Engineering &amp; Digital Insights</p>
+        </div>
       </div>
     </header>
 
-    <section class="cases">
-      <div class="wrap">
-        <input
-          id="blogSearchInput"
-          type="text"
-          placeholder="Search articles…"
-          class="blog-search"
-          style="
-            border: 1px solid var(--line-strong);
-            padding: 13px 16px;
-            font-family: var(--font-body);
-            width: 100%;
-            max-width: 420px;
-            border-radius: 2px;
-            margin-bottom: 28px;
-          "
-        />
+    <main id="main">
+      <!-- ============================= BLOG LISTING ============================= -->
+      <section class="blog-listing" id="blog-list">
+        <div class="wrap">
+          <div class="blog-listing-header">
+            <!-- <span class="eyebrow" style="justify-content:center;">Latest Articles</span> -->
+            <h2>Latest Articles</h2>
+            <!-- <p>Two engineering perspectives on where manufacturing is headed — one rooted in physics, one in data. Select an article to read it in full.</p> -->
+          </div>
 
-        <div class="blog-cats reveal">
-          <a href="#" data-cat="all" class="active-cat">All</a>
-          <a href="#" data-cat="cfd">CFD</a>
-          <a href="#" data-cat="process">Process Engineering</a>
-          <a href="#" data-cat="heat">Heat Transfer</a>
-          <a href="#" data-cat="multiphase">Multiphase Flow</a>
-          <a href="#" data-cat="digital">Process Digitalization</a>
-          <a href="#" data-cat="equipment">Equipment Design</a>
-          <a href="#" data-cat="ai">Industrial AI</a>
-          <a href="#" data-cat="analytics">Predictive Analytics</a>
+          <div class="blog-grid">
+            <!-- Blog Card 1: CFD -->
+            <article
+              class="blog-card"
+              data-target="article-cfd"
+              tabindex="0"
+              role="button"
+              aria-label="Read: From Trial-and-Error to Digital Engineering"
+            >
+              <div class="blog-card-media">
+                <!-- <span class="blog-card-category">CFD &amp; Simulation</span> -->
+                <img
+                  src="assets/blogs/cfd-home.jpeg"
+                  alt="CFD simulation visualization"
+                />
+                <svg
+                  viewBox="0 0 700 300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <pattern
+                      id="gridCfdCard"
+                      width="35"
+                      height="35"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <path
+                        d="M35 0 L0 0 0 35"
+                        fill="none"
+                        stroke="rgba(22,64,101,0.09)"
+                        stroke-width="1"
+                      />
+                    </pattern>
+                  </defs>
+                  <rect width="700" height="300" fill="url(#gridCfdCard)" />
+                  <ellipse
+                    cx="182"
+                    cy="150"
+                    rx="24"
+                    ry="66"
+                    fill="#ffffff"
+                    stroke="var(--blueberry)"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="182"
+                    y="84"
+                    width="336"
+                    height="132"
+                    fill="#ffffff"
+                    stroke="var(--blueberry)"
+                    stroke-width="2"
+                  />
+                  <ellipse
+                    cx="518"
+                    cy="150"
+                    rx="24"
+                    ry="66"
+                    fill="#ffffff"
+                    stroke="var(--blueberry)"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="60"
+                    y1="150"
+                    x2="640"
+                    y2="150"
+                    stroke="var(--line-strong)"
+                    stroke-width="1"
+                    stroke-dasharray="5 5"
+                  />
+                  <path
+                    class="stream-path"
+                    d="M60,112 C160,96 260,132 350,112 C440,92 540,130 640,112"
+                    fill="none"
+                    stroke="var(--flow)"
+                    stroke-width="2"
+                  />
+                  <path
+                    class="stream-path"
+                    d="M60,150 C160,140 260,160 350,150 C440,140 540,162 640,150"
+                    fill="none"
+                    stroke="var(--flow)"
+                    stroke-width="2"
+                    style="animation-delay: -0.6s"
+                  />
+                  <path
+                    class="stream-path"
+                    d="M60,188 C160,204 260,168 350,188 C440,208 540,170 640,188"
+                    fill="none"
+                    stroke="var(--flow)"
+                    stroke-width="2"
+                    style="animation-delay: -1.2s"
+                  />
+                  <path d="M52,150 L66,144 L66,156 Z" fill="var(--amber)" />
+                  <path d="M648,150 L634,144 L634,156 Z" fill="var(--amber)" />
+                  <text
+                    x="350"
+                    y="264"
+                    text-anchor="middle"
+                    font-family="JetBrains Mono, monospace"
+                    font-size="11"
+                    fill="var(--blueberry-deep)"
+                    letter-spacing="1"
+                  >
+                    FLOW · HEAT TRANSFER · PRESSURE
+                  </text>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>Kumar Saliyan</span>
+                  <span>Sep 4, 2026</span>
+                  <span>7 min read</span>
+                </div>
+                <h3>
+                  From Trial-and-Error to Digital Engineering: How CFD Is
+                  Revolutionizing Manufacturing
+                </h3>
+                <p>
+                  Computational Fluid Dynamics lets manufacturers simulate flow,
+                  heat and mixing before touching physical equipment — turning
+                  Build → Test → Modify into Model → Simulate → Optimize.
+                </p>
+                <span class="blog-card-read"
+                  >Read Article <span>&rarr;</span></span
+                >
+              </div>
+            </article>
+
+            <!-- Blog Card 2: AI & Data Analytics -->
+            <article
+              class="blog-card"
+              data-target="article-ai-analytics"
+              tabindex="0"
+              role="button"
+              aria-label="Read: From Factory Data to Factory Intelligence"
+            >
+              <div class="blog-card-media">
+                <!-- <span class="blog-card-category">AI &amp; Data Analytics</span> -->
+                <img
+                  src="assets/blogs/digit-home.jpeg"
+                  alt="Digital manufacturing analytics visualization"
+                />
+                <svg
+                  viewBox="0 0 700 300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <pattern
+                      id="gridAiCard"
+                      width="35"
+                      height="35"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <path
+                        d="M35 0 L0 0 0 35"
+                        fill="none"
+                        stroke="rgba(22,64,101,0.09)"
+                        stroke-width="1"
+                      />
+                    </pattern>
+                  </defs>
+                  <rect width="700" height="300" fill="url(#gridAiCard)" />
+                  <g
+                    stroke="var(--blueberry)"
+                    stroke-width="1.4"
+                    stroke-dasharray="3 4"
+                    opacity="0.75"
+                  >
+                    <line x1="350" y1="130" x2="180" y2="80" />
+                    <line x1="350" y1="130" x2="520" y2="70" />
+                    <line x1="350" y1="130" x2="150" y2="180" />
+                    <line x1="350" y1="130" x2="560" y2="175" />
+                    <line x1="350" y1="130" x2="380" y2="215" />
+                  </g>
+                  <circle
+                    class="node-pulse"
+                    cx="180"
+                    cy="80"
+                    r="9"
+                    fill="var(--amber)"
+                  />
+                  <circle
+                    class="node-pulse"
+                    cx="520"
+                    cy="70"
+                    r="9"
+                    fill="var(--amber)"
+                    style="animation-delay: -0.5s"
+                  />
+                  <circle
+                    class="node-pulse"
+                    cx="150"
+                    cy="180"
+                    r="9"
+                    fill="var(--amber)"
+                    style="animation-delay: -1s"
+                  />
+                  <circle
+                    class="node-pulse"
+                    cx="560"
+                    cy="175"
+                    r="9"
+                    fill="var(--amber)"
+                    style="animation-delay: -1.5s"
+                  />
+                  <circle
+                    class="node-pulse"
+                    cx="380"
+                    cy="215"
+                    r="9"
+                    fill="var(--amber)"
+                    style="animation-delay: -2s"
+                  />
+                  <circle
+                    cx="350"
+                    cy="130"
+                    r="15"
+                    fill="var(--blueberry-deep)"
+                    stroke="var(--flow)"
+                    stroke-width="2"
+                  />
+                  <polyline
+                    points="90,258 140,244 190,262 240,232 290,250 340,220 390,246 440,224 490,244 610,214"
+                    fill="none"
+                    stroke="var(--flow)"
+                    stroke-width="2"
+                  />
+                  <text
+                    x="350"
+                    y="284"
+                    text-anchor="middle"
+                    font-family="JetBrains Mono, monospace"
+                    font-size="11"
+                    fill="var(--blueberry-deep)"
+                    letter-spacing="1"
+                  >
+                    SENSORS · ANALYTICS · PREDICTION
+                  </text>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span>Anjali Verma</span>
+                  <span>Sep 4, 2026</span>
+                  <span>9 min read</span>
+                </div>
+                <h3>
+                  From Factory Data to Factory Intelligence: How AI and Data
+                  Analytics Are Transforming Manufacturing
+                </h3>
+                <p>
+                  Plants no longer struggle to collect data — the challenge is
+                  turning it into decisions. Here's how predictive maintenance,
+                  anomaly detection and AI-based optimization build the
+                  intelligent factory.
+                </p>
+                <span class="blog-card-read"
+                  >Read Article <span>&rarr;</span></span
+                >
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="blog-grid">
-          <article class="blog-card reveal" data-cat="cfd">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <path
-                  class="stream-path"
-                  d="M0 65 C 60 30,110 100,160 65 S 260 30,300 70"
-                  stroke="#0A375F"
-                  stroke-width="1.4"
-                  fill="none"
-                  opacity=".6"
-                />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>CFD</span><span>·</span><span>8 min read</span>
-              </div>
-              <h3>How CFD Helps Optimize Industrial Pump Performance</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                Where CFD adds value beyond a vendor curve sheet — cavitation,
-                recirculation and casing losses.
-              </p>
-            </div>
-          </article>
+      <!-- ============================= ARTICLE: CFD ============================= -->
+      <section
+        class="blog-article"
+        id="article-cfd"
+        hidden
+        aria-labelledby="article-cfd-title"
+      >
+        <div class="wrap">
+          <button class="blog-back" type="button" data-back>
+            <span>&larr;</span> Back to all articles
+          </button>
 
-          <article class="blog-card reveal" data-cat="heat">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <g stroke="#0A375F" stroke-width="1" opacity=".4">
-                  <line x1="20" y1="35" x2="280" y2="35" />
-                  <line x1="20" y1="65" x2="280" y2="65" />
-                  <line x1="20" y1="95" x2="280" y2="95" />
-                </g>
-              </svg>
+          <div class="blog-article-header">
+            <!-- <span class="blog-article-category">CFD &amp; Simulation</span> -->
+            <h1 id="article-cfd-title">
+              From Trial-and-Error to Digital Engineering: How CFD Is
+              Revolutionizing Manufacturing
+            </h1>
+            <div class="blog-article-meta">
+              <span>Author: Kumar Saliyan</span>
+              <span>September 4, 2026</span>
+              <span>7 min read</span>
             </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Heat Transfer</span><span>·</span><span>7 min read</span>
-              </div>
-              <h3>CFD Applications in Heat Exchanger Design</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                Using conjugate heat transfer models to catch maldistribution
-                before it becomes a fouling problem.
-              </p>
-            </div>
-          </article>
+          </div>
 
-          <article class="blog-card reveal" data-cat="digital">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <polyline
-                  points="20,100 70,75 120,90 170,50 220,70 270,35"
-                  fill="none"
-                  stroke="#E4A13B"
-                  stroke-width="1.6"
-                />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Process Digitalization</span><span>·</span
-                ><span>6 min read</span>
-              </div>
-              <h3>What Is Process Digitalization?</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                A practical definition — and why it starts with engineering
-                knowledge, not software.
-              </p>
-            </div>
-          </article>
-
-          <article class="blog-card reveal" data-cat="cfd">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <circle
-                  cx="150"
-                  cy="65"
-                  r="45"
-                  fill="none"
-                  stroke="#0A375F"
-                  stroke-width="1.4"
-                  opacity=".5"
-                />
-                <circle
-                  cx="150"
-                  cy="65"
-                  r="25"
-                  fill="none"
-                  stroke="#0A375F"
-                  stroke-width="1.4"
-                />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>CFD</span><span>·</span><span>9 min read</span>
-              </div>
-              <h3>CFD vs Traditional Equipment Design Approaches</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                When correlation-based sizing is enough, and when simulation
-                earns its cost.
-              </p>
-            </div>
-          </article>
-
-          <article class="blog-card reveal" data-cat="analytics">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <rect
-                  x="30"
-                  y="70"
-                  width="24"
+          <div class="blog-article-visual">
+            <img
+              src="assets/blogs/cfd-home.jpeg"
+              alt="CFD simulation visualization"
+            />
+            <svg
+              viewBox="0 0 1000 380"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-labelledby="cfdHeroTitle"
+            >
+              <title id="cfdHeroTitle">
+                Blueprint diagram of streamlines flowing through a reactor
+                vessel, with a recirculation zone flagged
+              </title>
+              <defs>
+                <pattern
+                  id="gridCfdHero"
+                  width="40"
                   height="40"
-                  fill="#0A375F"
-                  opacity=".4"
-                />
-                <rect
-                  x="70"
-                  y="50"
-                  width="24"
-                  height="60"
-                  fill="#0A375F"
-                  opacity=".4"
-                />
-                <rect
-                  x="110"
-                  y="30"
-                  width="24"
-                  height="80"
-                  fill="#4FA9DD"
-                  opacity=".6"
-                />
-                <rect
-                  x="150"
-                  y="60"
-                  width="24"
-                  height="50"
-                  fill="#0A375F"
-                  opacity=".4"
-                />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Predictive Analytics</span><span>·</span
-                ><span>6 min read</span>
-              </div>
-              <h3>How Predictive Dashboards Improve Manufacturing Decisions</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                Turning trend lines into timely operator action, not just
-                historical reporting.
-              </p>
-            </div>
-          </article>
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M40 0 L0 0 0 40"
+                    fill="none"
+                    stroke="rgba(22,64,101,0.08)"
+                    stroke-width="1"
+                  />
+                </pattern>
+              </defs>
+              <rect width="1000" height="380" fill="url(#gridCfdHero)" />
+              <ellipse
+                cx="230"
+                cy="190"
+                rx="34"
+                ry="94"
+                fill="#ffffff"
+                stroke="var(--blueberry)"
+                stroke-width="2.5"
+              />
+              <rect
+                x="230"
+                y="96"
+                width="500"
+                height="188"
+                fill="#ffffff"
+                stroke="var(--blueberry)"
+                stroke-width="2.5"
+              />
+              <ellipse
+                cx="730"
+                cy="190"
+                rx="34"
+                ry="94"
+                fill="#ffffff"
+                stroke="var(--blueberry)"
+                stroke-width="2.5"
+              />
+              <line
+                x1="90"
+                y1="190"
+                x2="900"
+                y2="190"
+                stroke="var(--line-strong)"
+                stroke-width="1"
+                stroke-dasharray="6 6"
+              />
+              <path
+                class="stream-path"
+                d="M90,140 C230,116 340,168 480,140 C620,112 730,164 900,140"
+                fill="none"
+                stroke="var(--flow)"
+                stroke-width="2.5"
+              />
+              <path
+                class="stream-path"
+                d="M90,190 C230,178 340,204 480,190 C620,176 730,206 900,190"
+                fill="none"
+                stroke="var(--flow)"
+                stroke-width="2.5"
+                style="animation-delay: -0.6s"
+              />
+              <path
+                class="stream-path"
+                d="M90,240 C230,264 340,212 480,240 C620,268 730,208 900,240"
+                fill="none"
+                stroke="var(--flow)"
+                stroke-width="2.5"
+                style="animation-delay: -1.2s"
+              />
+              <path d="M76,190 L96,180 L96,200 Z" fill="var(--amber)" />
+              <path d="M914,190 L894,180 L894,200 Z" fill="var(--amber)" />
+              <circle
+                cx="560"
+                cy="150"
+                r="34"
+                fill="rgba(228,161,59,0.12)"
+                stroke="var(--amber)"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+              />
+              <text
+                x="560"
+                y="94"
+                text-anchor="middle"
+                font-family="JetBrains Mono, monospace"
+                font-size="12"
+                fill="var(--amber-deep)"
+                letter-spacing="0.5"
+              >
+                RECIRCULATION ZONE
+              </text>
+              <text
+                x="230"
+                y="330"
+                font-family="JetBrains Mono, monospace"
+                font-size="12"
+                fill="var(--blueberry-deep)"
+                letter-spacing="0.5"
+              >
+                INLET
+              </text>
+              <text
+                x="700"
+                y="330"
+                font-family="JetBrains Mono, monospace"
+                font-size="12"
+                fill="var(--blueberry-deep)"
+                letter-spacing="0.5"
+              >
+                OUTLET
+              </text>
+              <text
+                x="500"
+                y="360"
+                text-anchor="middle"
+                font-family="JetBrains Mono, monospace"
+                font-size="12"
+                fill="var(--ink-soft)"
+                letter-spacing="1"
+              >
+                VELOCITY · TEMPERATURE · PRESSURE FIELD
+              </text>
+            </svg>
+          </div>
 
-          <article class="blog-card reveal" data-cat="multiphase">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <ellipse
-                  cx="150"
-                  cy="65"
-                  rx="80"
-                  ry="45"
-                  fill="none"
-                  stroke="#0A375F"
-                  stroke-width="1.3"
-                  opacity=".5"
-                />
-                <path
-                  d="M70 65 C 100 35,200 95,230 65"
-                  stroke="#4FA9DD"
-                  stroke-width="1.4"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Multiphase Flow</span><span>·</span
-                ><span>10 min read</span>
-              </div>
-              <h3>Modelling Multiphase Mixing in Stirred Reactors</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                Choosing between VOF and Eulerian approaches for blending and
-                dispersion problems.
-              </p>
-            </div>
-          </article>
+          <div class="blog-article-body">
+            <p class="blog-article-lede">
+              Manufacturing has always been driven by the pursuit of better
+              performance, higher productivity, lower energy consumption,
+              improved quality, greater reliability, and reduced operating
+              costs. Traditionally, achieving these goals has often depended on
+              physical prototypes, plant trials, engineering experience, and
+              repeated design iterations. Today, Computational Fluid Dynamics
+              (CFD) is changing that approach. CFD enables manufacturers to
+              create a virtual representation of fluid flow, heat transfer,
+              pressure, mixing, combustion, and other physical phenomena before
+              making physical changes to equipment or processes. Instead of
+              asking &ldquo;What will happen if we change the design?&rdquo;,
+              engineers can simulate the answer first. This shift from physical
+              experimentation to physics-based digital engineering is
+              transforming how modern manufacturing facilities design,
+              troubleshoot, optimize, and scale their processes.
+            </p>
 
-          <article class="blog-card reveal" data-cat="equipment">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <path
-                  d="M150 15 L215 110 L85 110 Z"
-                  fill="none"
-                  stroke="#0A375F"
-                  stroke-width="1.3"
-                  opacity=".6"
-                />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Equipment Design</span><span>·</span
-                ><span>8 min read</span>
+            <div class="blog-block blog-block-noindex">
+              <div class="blog-block-index">DEF</div>
+              <div class="blog-block-content">
+                <h2>What Is CFD?</h2>
+                <p>
+                  Computational Fluid Dynamics (CFD) is a numerical simulation
+                  technology used to analyze how fluids behave and interact with
+                  equipment, materials, and processes. Depending on the
+                  application, CFD can simulate fluid flow and velocity
+                  distribution, pressure drop, heat transfer, temperature
+                  distribution, turbulence, mixing and residence time,
+                  multiphase flow, combustion, particle transport, gas-solid
+                  interactions, chemical species transport, ventilation,
+                  cooling, and heating systems. For manufacturers, this provides
+                  a way to investigate complex physical behavior virtually,
+                  often before expensive equipment modifications, prototypes, or
+                  plant trials are undertaken.
+                </p>
               </div>
-              <h3>Cyclone Separator Design: Geometry Choices That Matter</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                How inlet, body and vortex-finder dimensions trade off
-                separation efficiency against pressure drop.
-              </p>
             </div>
-          </article>
 
-          <article class="blog-card reveal" data-cat="ai">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <rect
-                  x="60"
-                  y="20"
-                  width="70"
-                  height="70"
-                  fill="none"
-                  stroke="#0A375F"
-                  stroke-width="1.2"
-                  opacity=".5"
-                />
-                <rect
-                  x="170"
-                  y="20"
-                  width="70"
-                  height="70"
-                  fill="#12496F"
-                  opacity=".4"
-                />
-                <circle cx="205" cy="55" r="8" fill="#E4A13B" />
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Industrial AI</span><span>·</span><span>7 min read</span>
+            <div class="blog-block">
+              <div class="blog-block-index">01</div>
+              <div class="blog-block-content">
+                <h2>Design Better Equipment Before Building It</h2>
+                <p>
+                  One of the biggest advantages of CFD is its ability to
+                  evaluate equipment designs during the engineering stage.
+                  Consider a reactor, heat exchanger, mixing vessel, burner,
+                  cyclone, duct, pump system, or cooling enclosure. A
+                  conventional development approach may follow the cycle Design
+                  &rarr; Fabricate &rarr; Test &rarr; Identify Problems &rarr;
+                  Modify &rarr; Fabricate Again, with each iteration consuming
+                  time, resources, and capital.
+                </p>
+                <p>
+                  CFD can transform this workflow into Design &rarr; Simulate
+                  &rarr; Optimize &rarr; Manufacture. Engineers can evaluate
+                  multiple design configurations virtually and identify
+                  potential issues before committing to fabrication. CFD can
+                  reveal recirculation zones, poor mixing, excessive pressure
+                  loss, dead zones, high-temperature regions, low heat-transfer
+                  areas, uneven velocity distribution, flow separation, and
+                  localized wear. The result is a more informed engineering
+                  decision before physical resources are committed.
+                </p>
               </div>
-              <h3>Computer Vision for Automated Defect Detection</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                What it takes to move a vision model from a proof of concept to
-                the production line.
-              </p>
             </div>
-          </article>
 
-          <article class="blog-card reveal" data-cat="process">
-            <div class="blog-thumb">
-              <svg viewBox="0 0 300 130" width="100%" height="100%">
-                <g stroke="#0A375F" stroke-width="1.2" fill="none" opacity=".6">
-                  <path d="M20 65 H120" />
-                  <path d="M120 65 V25 H220" />
-                  <path d="M120 65 V105 H220" />
-                </g>
-              </svg>
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <span>Process Engineering</span><span>·</span
-                ><span>9 min read</span>
+            <div class="blog-block">
+              <div class="blog-block-index">02</div>
+              <div class="blog-block-content">
+                <h2>Optimize Manufacturing Processes</h2>
+                <p>
+                  CFD is not limited to equipment design; it can also provide
+                  valuable insight into the manufacturing process itself. In
+                  chemical and process industries, for example, CFD can help
+                  answer critical questions: Is the reactor mixing effectively?
+                  Are there temperature gradients inside the vessel? Is the
+                  residence-time distribution appropriate? Is the feed
+                  distributed uniformly? Are there regions where reactions may
+                  be incomplete?
+                </p>
+                <p>
+                  Instead of relying exclusively on plant measurements,
+                  engineers can visualize flow, temperature, concentration, and
+                  other physical phenomena inside equipment, even in locations
+                  where installing physical sensors may be impractical. This
+                  deeper visibility into the process can reveal hidden
+                  inefficiencies and create new opportunities for process
+                  optimization.
+                </p>
               </div>
-              <h3>Flow Distribution Problems in Manifold-Fed Systems</h3>
-              <p style="font-size: 0.88rem; margin-top: 8px">
-                Why uneven headers quietly erode plant capacity — and how to
-                diagnose them.
-              </p>
             </div>
-          </article>
+
+            <div class="blog-block">
+              <div class="blog-block-index">03</div>
+              <div class="blog-block-content">
+                <h2>Reduce Energy Consumption</h2>
+                <p>
+                  Energy efficiency is one of the most important priorities for
+                  modern manufacturing. Poor fluid distribution, excessive
+                  pressure drop, inefficient heat transfer, and non-uniform
+                  combustion can all contribute to unnecessary energy
+                  consumption. CFD allows engineers to investigate the physical
+                  causes behind these inefficiencies and evaluate potential
+                  improvements before implementing them in the plant.
+                </p>
+                <p class="blog-flow-note">
+                  Applications include air distribution, burner geometry,
+                  furnace airflow, cooling systems, heat exchanger
+                  configurations, pump and piping systems, ventilation systems,
+                  and compressor flow paths.
+                </p>
+                <p>
+                  Instead of simply asking, &ldquo;How much energy is the
+                  equipment consuming?&rdquo;, CFD enables engineers to
+                  investigate the more valuable question: &ldquo;Why is the
+                  equipment consuming this much energy, and where can the
+                  physical losses be reduced?&rdquo;
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">04</div>
+              <div class="blog-block-content">
+                <h2>Improve Product and Process Quality</h2>
+                <p>
+                  Manufacturing quality is often closely linked to physical
+                  conditions within the process. Temperature, concentration,
+                  mixing, cooling rate, drying conditions, and residence time
+                  can all influence final product characteristics. CFD can
+                  identify process non-uniformities that may otherwise appear
+                  only as variations in product quality.
+                </p>
+                <p>
+                  For example, a thermal process may contain regions that are
+                  significantly hotter than others; a mixing vessel may contain
+                  poorly mixed zones; or a cooling system may contain areas
+                  where heat removal is inadequate. By understanding these
+                  spatial variations, engineers can modify equipment or
+                  operating conditions to create a more uniform process
+                  environment, contributing to more consistent product quality,
+                  improved process stability, and reduced quality variation.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">05</div>
+              <div class="blog-block-content">
+                <h2>Accelerate Troubleshooting</h2>
+                <p>
+                  CFD is also a powerful tool for investigating existing plant
+                  problems. Manufacturing facilities frequently encounter
+                  unexpected pressure drops, equipment overheating, poor
+                  combustion, uneven product quality, excessive energy
+                  consumption, inadequate cooling, poor ventilation, fouling,
+                  and flow instability. Plant measurements can tell engineers
+                  what is happening, but CFD can help investigate why it is
+                  happening.
+                </p>
+                <p>
+                  A validated CFD model can serve as a virtual troubleshooting
+                  environment in which engineers investigate flow behavior,
+                  identify physical causes, and evaluate potential solutions
+                  without immediately modifying physical equipment. This can
+                  reduce troubleshooting time and help engineers make decisions
+                  based on a deeper understanding of the underlying physics.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">06</div>
+              <div class="blog-block-content">
+                <h2>Support Scale-Up</h2>
+                <p>
+                  Scaling a process from laboratory or pilot scale to commercial
+                  production is one of the most challenging activities in
+                  manufacturing. Simply increasing equipment dimensions does not
+                  guarantee that the underlying physics will scale in the same
+                  way &mdash; flow patterns, turbulence, heat transfer, mixing,
+                  reaction behavior, and residence-time distribution can change
+                  significantly with scale.
+                </p>
+                <p>
+                  CFD provides a mechanism for studying these effects before
+                  committing to full-scale equipment. A digital model can be
+                  developed at pilot scale, compared with experimental or plant
+                  data, validated, and then used to investigate larger-scale
+                  configurations, helping identify scale-dependent risks and
+                  increase confidence in the final commercial configuration.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">07</div>
+              <div class="blog-block-content">
+                <h2>Enable Digital Twins and Smart Manufacturing</h2>
+                <p>
+                  The future of CFD extends beyond standalone simulation
+                  studies. CFD can become an important component of a broader
+                  digital twin and smart manufacturing ecosystem by connecting
+                  physics-based models with real operating data.
+                </p>
+                <p class="blog-flow-note">
+                  Sensors &rarr; Industrial Data Platform &rarr; CFD/Physics
+                  Model &rarr; AI Analytics &rarr; Prediction &rarr;
+                  Optimization &rarr; Plant
+                </p>
+                <p>
+                  Sensors provide real-time information about equipment and
+                  process conditions. The data platform organizes and
+                  contextualizes that information. Physics-based models provide
+                  an understanding of how the system should behave, while AI and
+                  analytics identify patterns and deviations within actual
+                  operating data. Together, these technologies create a stronger
+                  connection between the physical plant and its digital
+                  representation.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">08</div>
+              <div class="blog-block-content">
+                <h2>CFD + AI: The Next Engineering Revolution</h2>
+                <p>
+                  Traditional CFD simulations can be computationally expensive,
+                  particularly for complex geometries, transient simulations,
+                  and multiphysics problems. Artificial intelligence is opening
+                  new possibilities for accelerating this engineering workflow.
+                  Machine-learning models can be trained using simulation,
+                  experimental, and plant data to develop fast surrogate models
+                  that approximate system behavior within defined operating
+                  ranges.
+                </p>
+                <p>
+                  The combination of CFD and AI creates opportunities for
+                  AI-assisted design optimization, rapid process prediction,
+                  automated parameter optimization, and physics-informed machine
+                  learning. AI does not replace physics; it extends the
+                  practical reach of physics-based engineering by making complex
+                  analysis faster and more scalable.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">09</div>
+              <div class="blog-block-content">
+                <h2>The Business Impact of CFD</h2>
+                <p>
+                  CFD is ultimately not about producing colorful simulation
+                  contours &mdash; it is about making better engineering and
+                  manufacturing decisions. When applied correctly and supported
+                  by appropriate validation, CFD can contribute to
+                  <strong>lower CAPEX</strong> by reducing unnecessary
+                  prototypes and design iterations,
+                  <strong>lower OPEX</strong> through improved energy
+                  efficiency, <strong>higher productivity</strong> by
+                  identifying bottlenecks,
+                  <strong>better quality</strong> through reduced process
+                  non-uniformity, <strong>faster development</strong> through
+                  virtual evaluation, <strong>lower technical risk</strong>, and
+                  <strong>improved sustainability</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block blog-block-noindex">
+              <div class="blog-block-index">OUTLOOK</div>
+              <div class="blog-block-content">
+                <h2>The Future: Manufacturing Through a Digital Lens</h2>
+                <p>
+                  Manufacturing is moving toward a world where physical assets
+                  increasingly have digital counterparts. CFD provides an
+                  important physics foundation for this transformation. The most
+                  successful organizations will not use CFD simply as a tool for
+                  generating simulation reports &mdash; they will integrate
+                  simulation into the broader engineering lifecycle, from
+                  conceptual design and equipment sizing to commissioning,
+                  troubleshooting, optimization, scale-up, and digital-twin
+                  development.
+                </p>
+                <p class="blog-flow-note">
+                  Build &rarr; Test &rarr; Modify becomes Model &rarr; Simulate
+                  &rarr; Optimize &rarr; Build &rarr; Validate &rarr;
+                  Continuously Improve
+                </p>
+                <p>
+                  This approach allows engineering teams to test more ideas,
+                  understand complex physical behavior earlier, reduce technical
+                  uncertainty, and make better-informed decisions before changes
+                  reach the physical plant.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block blog-block-noindex">
+              <div class="blog-block-index">CLOSE</div>
+              <div class="blog-block-content">
+                <h2>Engineering the Future</h2>
+                <p>
+                  CFD gives manufacturers the ability to see inside processes
+                  that are otherwise difficult or impossible to observe. By
+                  combining computational physics with engineering expertise,
+                  plant data, and AI, manufacturers can transform complex
+                  physical processes into measurable, understandable, and
+                  increasingly optimizable digital systems.
+                </p>
+                <p>
+                  The future of manufacturing will not be designed entirely on
+                  the shop floor. It will increasingly be engineered in the
+                  digital world first, then validated, implemented, and
+                  continuously improved in the physical world.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-article-closer">
+            <h3>Considering CFD for your next project?</h3>
+            <p>
+              Talk to our engineering team about how simulation can de-risk your
+              design, troubleshooting, or scale-up decisions.
+            </p>
+            <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="cta-banner">
-      <div class="mesh-grid"></div>
-      <div class="wrap">
-        <h2>Have an Engineering Challenge?</h2>
-        <p>
-          Let's transform your process engineering problem into a simulation,
-          digital solution, or data-driven decision tool.
-        </p>
-        <div class="cta-row">
-          <a href="contact.html" class="btn btn-primary">Talk to an Expert</a>
-          <a href="contact.html" class="btn btn-outline on-dark"
-            >Discuss Your Project</a
-          >
+      <!-- ===================== ARTICLE: AI & DATA ANALYTICS ===================== -->
+      <section
+        class="blog-article"
+        id="article-ai-analytics"
+        hidden
+        aria-labelledby="article-ai-title"
+      >
+        <div class="wrap">
+          <button class="blog-back" type="button" data-back>
+            <span>&larr;</span> Back to all articles
+          </button>
+
+          <div class="blog-article-header">
+            <!-- <span class="blog-article-category">AI &amp; Data Analytics</span> -->
+            <h1 id="article-ai-title">
+              From Factory Data to Factory Intelligence: How AI and Data
+              Analytics Are Transforming Manufacturing
+            </h1>
+            <div class="blog-article-meta">
+              <span>Author: Anjali Verma</span>
+              <span>September 4, 2026</span>
+              <span>9 min read</span>
+            </div>
+          </div>
+
+          <div class="blog-article-visual">
+            <img
+              src="assets/blogs/digit-home.jpeg"
+              alt="Digital manufacturing analytics visualization"
+            />
+            <svg
+              viewBox="0 0 1000 380"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-labelledby="aiHeroTitle"
+            >
+              <title id="aiHeroTitle">
+                Blueprint diagram of a sensor network feeding a digital twin and
+                analytics model
+              </title>
+              <defs>
+                <pattern
+                  id="gridAiHero"
+                  width="40"
+                  height="40"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M40 0 L0 0 0 40"
+                    fill="none"
+                    stroke="rgba(22,64,101,0.08)"
+                    stroke-width="1"
+                  />
+                </pattern>
+              </defs>
+              <rect width="1000" height="380" fill="url(#gridAiHero)" />
+              <g
+                stroke="var(--blueberry)"
+                stroke-width="1.6"
+                stroke-dasharray="4 5"
+                opacity="0.8"
+              >
+                <line x1="500" y1="170" x2="230" y2="90" />
+                <line x1="500" y1="170" x2="760" y2="80" />
+                <line x1="500" y1="170" x2="180" y2="220" />
+                <line x1="500" y1="170" x2="810" y2="230" />
+                <line x1="500" y1="170" x2="500" y2="70" />
+                <line x1="500" y1="170" x2="330" y2="270" />
+                <line x1="500" y1="170" x2="670" y2="270" />
+              </g>
+              <circle
+                class="node-pulse"
+                cx="230"
+                cy="90"
+                r="11"
+                fill="var(--amber)"
+              />
+              <circle
+                class="node-pulse"
+                cx="760"
+                cy="80"
+                r="11"
+                fill="var(--amber)"
+                style="animation-delay: -0.4s"
+              />
+              <circle
+                class="node-pulse"
+                cx="180"
+                cy="220"
+                r="11"
+                fill="var(--amber)"
+                style="animation-delay: -0.8s"
+              />
+              <circle
+                class="node-pulse"
+                cx="810"
+                cy="230"
+                r="11"
+                fill="var(--amber)"
+                style="animation-delay: -1.2s"
+              />
+              <circle
+                class="node-pulse"
+                cx="500"
+                cy="70"
+                r="11"
+                fill="var(--amber)"
+                style="animation-delay: -1.6s"
+              />
+              <circle
+                class="node-pulse"
+                cx="330"
+                cy="270"
+                r="11"
+                fill="var(--amber)"
+                style="animation-delay: -2s"
+              />
+              <circle
+                class="node-pulse"
+                cx="670"
+                cy="270"
+                r="11"
+                fill="var(--amber)"
+                style="animation-delay: -2.4s"
+              />
+              <circle
+                cx="500"
+                cy="170"
+                r="24"
+                fill="var(--blueberry-deep)"
+                stroke="var(--flow)"
+                stroke-width="2.5"
+              />
+              <text
+                x="500"
+                y="60"
+                text-anchor="middle"
+                font-family="JetBrains Mono, monospace"
+                font-size="12"
+                fill="var(--amber-deep)"
+                letter-spacing="0.5"
+              >
+                SENSOR NETWORK
+              </text>
+              <text
+                x="500"
+                y="120"
+                text-anchor="middle"
+                font-family="JetBrains Mono, monospace"
+                font-size="11"
+                fill="#ffffff"
+                letter-spacing="0.3"
+                style="opacity: 0"
+              >
+                .
+              </text>
+              <polyline
+                points="90,330 160,318 230,336 300,300 370,320 440,284 510,310 580,278 650,300 720,262 790,286 900,250"
+                fill="none"
+                stroke="var(--flow)"
+                stroke-width="2.5"
+              />
+              <text
+                x="500"
+                y="358"
+                text-anchor="middle"
+                font-family="JetBrains Mono, monospace"
+                font-size="12"
+                fill="var(--ink-soft)"
+                letter-spacing="1"
+              >
+                DATA &rarr; ANALYTICS &rarr; PREDICTION &rarr; OPTIMIZATION
+              </text>
+            </svg>
+          </div>
+
+          <div class="blog-article-body">
+            <p class="blog-article-lede">
+              Every modern manufacturing plant generates enormous amounts of
+              data. The challenge is no longer simply collecting data &mdash;
+              the challenge is turning that data into decisions. This is where
+              Artificial Intelligence (AI) and Data Analytics are transforming
+              manufacturing. When plant data is properly collected, structured,
+              analyzed, and connected with engineering knowledge, it can become
+              one of the most valuable assets in an organization. Manufacturers
+              can move from simply knowing what happened to understanding why it
+              happened, what will happen next, and what should be done about it.
+              That is the foundation of intelligent manufacturing.
+            </p>
+
+            <div class="blog-block">
+              <div class="blog-block-index">01</div>
+              <div class="blog-block-content">
+                <h2>From Historical Data to Predictive Intelligence</h2>
+                <p>
+                  Traditional manufacturing analytics focuses on understanding
+                  what has already happened &mdash; for example, reporting that
+                  production last month was 8,500 tonnes. While useful,
+                  historical reporting alone provides limited insight into the
+                  reasons behind performance or what may happen next.
+                </p>
+                <p>
+                  Advanced analytics enables manufacturers to understand why
+                  production was lower than expected. AI-powered predictive
+                  analytics goes further by forecasting what is likely to happen
+                  next, while intelligent optimization can recommend what should
+                  be done to maximize production, maintain quality, and minimize
+                  energy consumption &mdash; moving from Descriptive to
+                  Diagnostic to Predictive to Prescriptive Analytics.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">02</div>
+              <div class="blog-block-content">
+                <h2>
+                  Predictive Maintenance: Fix Problems Before They Stop
+                  Production
+                </h2>
+                <p>
+                  Unexpected equipment failures can be extremely costly,
+                  particularly in continuous-process industries where the
+                  failure of a pump, compressor, bearing, furnace, or other
+                  rotating equipment can disrupt an entire production process.
+                </p>
+                <p>
+                  AI enables a more proactive approach through predictive
+                  maintenance, where machine-learning models analyze historical
+                  and real-time equipment data &mdash; vibration, temperature,
+                  pressure, motor current, flow, speed, acoustic signals,
+                  lubrication condition, and maintenance history &mdash; to
+                  identify patterns associated with equipment degradation. By
+                  identifying subtle changes early, predictive maintenance
+                  provides warnings that allow maintenance teams to intervene
+                  before a developing problem becomes an unplanned shutdown.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">03</div>
+              <div class="blog-block-content">
+                <h2>Detect Process Anomalies Automatically</h2>
+                <p>
+                  Manufacturing processes are complex systems involving hundreds
+                  or even thousands of interacting variables. While experienced
+                  operators can often recognize subtle changes in plant
+                  behavior, human attention cannot scale indefinitely.
+                </p>
+                <p>
+                  AI-based anomaly detection can continuously monitor process
+                  variables and identify unusual patterns across multiple
+                  parameters simultaneously. A gradual shift in temperature,
+                  pressure, flow, energy consumption, or quality may look
+                  insignificant alone, but together could indicate an emerging
+                  process problem &mdash; giving operators an early warning
+                  before it becomes a major disruption.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">04</div>
+              <div class="blog-block-content">
+                <h2>Improve Product Quality</h2>
+                <p>
+                  AI can transform how manufacturers manage product quality by
+                  analyzing relationships across raw material properties,
+                  process conditions, equipment parameters, laboratory results,
+                  and environmental conditions. Machine-learning models can
+                  identify the variables that most influence quality and uncover
+                  relationships difficult to detect through conventional
+                  analysis.
+                </p>
+                <p>
+                  This enables manufacturers to move from quality inspection to
+                  quality prediction &mdash; adjusting process conditions
+                  proactively rather than waiting until a product has been
+                  manufactured and tested, creating opportunities for real-time
+                  quality optimization and reduced rework.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">05</div>
+              <div class="blog-block-content">
+                <h2>Optimize Energy Consumption</h2>
+                <p>
+                  Energy is one of the largest operating costs across many
+                  manufacturing industries, yet it is rarely controlled by a
+                  single variable &mdash; it is influenced by production rate,
+                  feed properties, temperature, pressure, equipment efficiency,
+                  ambient conditions, and product grade.
+                </p>
+                <p>
+                  AI and advanced analytics can analyze these variables
+                  simultaneously to determine conditions that minimize energy
+                  consumption while maintaining production and quality,
+                  transforming energy management from monitoring consumption
+                  into actively optimizing how energy is used.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">06</div>
+              <div class="blog-block-content">
+                <h2>Turn Process Data into Engineering Knowledge</h2>
+                <p>
+                  One of the most powerful capabilities of advanced analytics is
+                  uncovering relationships difficult to identify through
+                  conventional engineering analysis. Where traditional analysis
+                  may focus on a limited number of known parameters, advanced
+                  analytics can evaluate hundreds of variables simultaneously.
+                </p>
+                <p class="blog-flow-note">
+                  Regression &middot; classification &middot; clustering
+                  &middot; PCA &middot; time-series analysis &middot; anomaly
+                  detection &middot; feature engineering &middot; deep learning
+                </p>
+                <p>
+                  The objective is not to replace engineering knowledge but to
+                  augment engineering expertise with evidence from data,
+                  enabling faster, more informed, and more confident decisions.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">07</div>
+              <div class="blog-block-content">
+                <h2>AI-Assisted Root Cause Analysis</h2>
+                <p>
+                  When a manufacturing problem occurs, engineers often need to
+                  investigate numerous possible causes before identifying the
+                  underlying issue. AI and statistical analytics can analyze
+                  historical and real-time data to identify and rank the
+                  variables most strongly associated with an observed deviation.
+                </p>
+                <p>
+                  This does not eliminate the need for engineering judgment
+                  &mdash; it gives engineers a stronger starting point by
+                  narrowing the search space, resulting in faster, more
+                  systematic, evidence-based troubleshooting.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">08</div>
+              <div class="blog-block-content">
+                <h2>Production Optimization</h2>
+                <p>
+                  Manufacturing optimization requires balancing multiple, often
+                  conflicting objectives simultaneously &mdash; maximizing
+                  production, quality, and yield while minimizing energy
+                  consumption, waste, downtime, and overall cost.
+                </p>
+                <p>
+                  AI-based optimization can evaluate these complex relationships
+                  and identify operating regions that provide the best overall
+                  balance, moving production from passive monitoring toward
+                  continuous, data-driven optimization.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">09</div>
+              <div class="blog-block-content">
+                <h2>AI + IoT + Digital Twins</h2>
+                <p>
+                  The value of AI increases significantly when connected with
+                  Industrial IoT and digital-twin technologies in a continuous
+                  feedback loop.
+                </p>
+                <p class="blog-flow-note">
+                  Sensors &rarr; Data Platform &rarr; Analytics &rarr; AI Models
+                  &rarr; Digital Twin &rarr; Optimization &rarr; Plant
+                  Operations
+                </p>
+                <p>
+                  Sensors provide real-time information, the data platform
+                  organizes it, analytics identifies patterns, AI models
+                  generate predictions, and the digital twin provides
+                  engineering context &mdash; enabling manufacturers to move
+                  from observing operations toward predicting, optimizing, and
+                  improving them.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">10</div>
+              <div class="blog-block-content">
+                <h2>Building a Manufacturing Data Foundation</h2>
+                <p>
+                  AI cannot compensate for poor-quality or poorly contextualized
+                  data. Before implementing sophisticated AI models,
+                  manufacturers need a reliable data foundation bringing
+                  together information from PLCs, SCADA, DCS, historians, MES,
+                  ERP, LIMS, maintenance systems, and laboratory databases.
+                </p>
+                <p>
+                  Data quality must be addressed &mdash; missing values, sensor
+                  failures, outliers, incorrect timestamps, and inconsistent
+                  units. Equally important is context: a temperature value
+                  without knowing where, when, and under what conditions it was
+                  measured has limited engineering value. Effective industrial
+                  analytics depends on <strong>Data + Context</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">11</div>
+              <div class="blog-block-content">
+                <h2>Human Expertise Still Matters</h2>
+                <p>
+                  AI should not be viewed as a replacement for manufacturing
+                  engineers, process specialists, and experienced operators. The
+                  most effective intelligent manufacturing systems combine three
+                  forms of intelligence:
+                  <strong>Human Intelligence</strong> &mdash; experience and
+                  practical decision-making;
+                  <strong>Physics-Based Intelligence</strong> &mdash;
+                  engineering models, simulation, and CFD; and
+                  <strong>Data-Driven Intelligence</strong> &mdash; statistics,
+                  machine learning, and predictive analytics.
+                </p>
+                <p>
+                  CFD can reveal physical behavior, plant data can show how
+                  equipment actually operates, AI can identify patterns and
+                  predict future behavior, and engineers can use these insights
+                  to determine the most practical action &mdash; a
+                  decision-making framework considerably more powerful than any
+                  single technology alone.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block">
+              <div class="blog-block-index">12</div>
+              <div class="blog-block-content">
+                <h2>The Business Impact of AI and Analytics</h2>
+                <p>
+                  When implemented around clearly defined business objectives,
+                  AI and advanced analytics can deliver measurable improvements:
+                  <strong>predictive maintenance</strong> increases equipment
+                  availability, <strong>quality analytics</strong> identifies
+                  conditions behind product deviations,
+                  <strong>energy optimization</strong> uncovers inefficient
+                  equipment, and
+                  <strong>AI-assisted troubleshooting</strong> helps engineers
+                  prioritize the most likely causes.
+                </p>
+                <p>
+                  Ultimately, the value of AI is measured not by the
+                  sophistication of the algorithm, but by its ability to improve
+                  availability, quality, yield, energy efficiency, productivity,
+                  and cost.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block blog-block-noindex">
+              <div class="blog-block-index">OUTLOOK</div>
+              <div class="blog-block-content">
+                <h2>From Data Collection to Decision Automation</h2>
+                <p class="blog-flow-note">
+                  Data Collection &rarr; Visualization &rarr; Analytics &rarr;
+                  Predictive Analytics &rarr; AI-Based Recommendations &rarr;
+                  Optimization &rarr; Semi-/Autonomous Operations
+                </p>
+                <p>
+                  The objective is not to automate every decision. Manufacturers
+                  should automate the decisions that can be reliably optimized
+                  while giving engineers and operators better information for
+                  decisions that require experience, judgment, and contextual
+                  understanding &mdash; technology handling scale and complexity
+                  while people remain responsible for critical engineering
+                  decisions.
+                </p>
+              </div>
+            </div>
+
+            <div class="blog-block blog-block-noindex">
+              <div class="blog-block-index">CLOSE</div>
+              <div class="blog-block-content">
+                <h2>The Intelligent Factory Is Being Built Today</h2>
+                <p>
+                  Successful digital transformation does not begin with AI; it
+                  begins with a clear understanding of the business problem:
+                  Business Problem &rarr; Data &rarr; Engineering Understanding
+                  &rarr; Analytics &rarr; AI &rarr; Action &rarr; Measurable
+                  Value. AI is valuable when it produces a better manufacturing
+                  outcome, not simply because it is sophisticated.
+                </p>
+                <p>
+                  The competitive advantage of tomorrow's manufacturer will come
+                  from the ability to turn data into knowledge, knowledge into
+                  decisions, and decisions into continuous improvement &mdash;
+                  moving from reactive operations toward predictive, optimized,
+                  and increasingly intelligent production.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-article-closer">
+            <h3>Ready to build your data foundation?</h3>
+            <p>
+              Talk to our team about predictive maintenance, anomaly detection,
+              or AI-driven process optimization for your plant.
+            </p>
+            <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer>
       <div class="wrap">
@@ -404,33 +1394,35 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chematrix Solutions on LinkedIn"
-                ><span aria-hidden="true">in</span></a
               >
+                <span aria-hidden="true">in</span>
+              </a>
               <a
                 href="https://x.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chematrix Solutions on X"
-                ><span aria-hidden="true">X</span></a
               >
+                <span aria-hidden="true">X</span>
+              </a>
             </div>
           </div>
           <div>
             <h4>Quick Links</h4>
             <ul>
               <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Our Services</a></li>
-              <li><a href="case-studies.html">Case Studies</a></li>
+              <li><a href="case-studies.html">Our Services</a></li>
               <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
           <div>
             <h4>Capabilities</h4>
             <ul>
-              <li><a href="services.html#cfd">CFD &amp; Simulation</a></li>
-              <li><a href="services.html#process">Process Engineering</a></li>
-              <li><a href="services.html#digital">Process Digitalization</a></li>
-              <li><a href="services.html#digital">Digital Twin</a></li>
+              <li><a href="case-studies.html">CFD &amp; Simulation</a></li>
+              <li><a href="case-studies.html">Process Engineering</a></li>
+              <li><a href="case-studies.html">Process Digitalization</a></li>
+              <li><a href="case-studies.html">Digital Twin</a></li>
             </ul>
           </div>
           <div>
@@ -441,16 +1433,77 @@
                   >info@chemmatrixsolutions.com</a
                 >
               </li>
-              <li><a href="tel:+910000000000">+91‑XXXXX‑XXXXX</a></li>
-              <li>India · Middle East</li>
+              <li>
+                <a href="tel:+910000000000">+91&#8209;XXXXX&#8209;XXXXX</a>
+              </li>
+              <li>India &middot; Middle East</li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2026 Chematrix Solutions. All rights reserved.</span>
+          <span>&copy; 2026 Chematrix Solutions. All rights reserved.</span>
         </div>
       </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script>
+      (function () {
+        var toggle = document.querySelector(".nav-toggle");
+        var links = document.querySelector(".nav-links");
+        if (toggle && links) {
+          toggle.addEventListener("click", function () {
+            var isOpen = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          });
+        }
+
+        var listing = document.getElementById("blog-list");
+        var articles = document.querySelectorAll(".blog-article");
+
+        function showArticle(id) {
+          if (!id) return;
+          var target = document.getElementById(id);
+          if (!target) return;
+          listing.hidden = true;
+          articles.forEach(function (a) {
+            a.hidden = a.id !== id;
+          });
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          history.replaceState(null, "", "#" + id);
+        }
+
+        function showListing() {
+          articles.forEach(function (a) {
+            a.hidden = true;
+          });
+          listing.hidden = false;
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          history.replaceState(null, "", "#blog-list");
+        }
+
+        document.querySelectorAll(".blog-card").forEach(function (card) {
+          card.addEventListener("click", function () {
+            showArticle(card.getAttribute("data-target"));
+          });
+          card.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              showArticle(card.getAttribute("data-target"));
+            }
+          });
+        });
+
+        document.querySelectorAll("[data-back]").forEach(function (btn) {
+          btn.addEventListener("click", showListing);
+        });
+
+        var hash = window.location.hash
+          ? window.location.hash.substring(1)
+          : "";
+        if (hash && document.getElementById(hash) && hash !== "blog-list") {
+          showArticle(hash);
+        }
+      })();
+    </script>
   </body>
 </html>

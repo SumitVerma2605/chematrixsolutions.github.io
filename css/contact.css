@@ -212,6 +212,7 @@ p {
   color: #fff;
   overflow: hidden;
   padding: 80px 0 64px;
+  min-height: 360px;
 }
 
 /* .hero-layout {

@@ -176,6 +176,7 @@ p {
   display: none;
   background: none;
   border: none;
+  color: var(--blueberry);
 }
 
 @media (max-width: 900px) {
@@ -212,6 +213,22 @@ p {
   color: #fff;
   overflow: hidden;
   padding: 80px 0 64px;
+  min-height: 360px;
+}
+
+.page-hero {
+  position: relative;
+  min-height: 360px;
+  padding: 80px 0 64px;
+  overflow: hidden;
+  color: #fff;
+  background: var(--blueberry-deep);
+}
+
+.page-hero h1,
+.page-hero p,
+.page-hero .breadcrumb {
+  color: #fff;
 }
 
 .hero-layout {
@@ -740,7 +757,7 @@ p {
 .case-study-tab:focus-visible,
 .case-study-tab.is-active {
   border-color: var(--blueberry);
-  color: #ffffff;
+  color: #fbfbfb;
   background: var(--blueberry);
   outline: none;
 }
@@ -769,12 +786,12 @@ p {
   padding: 12px 5px 25px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  scrollbar-color: #cda5c5 transparent;
+  scrollbar-color: #0b95da transparent;
   scrollbar-width: thin;
 }
 
 .case-study-track:focus-visible {
-  outline: 3px solid rgba(189, 109, 159, 0.45);
+  outline: 3px solid rgb(4, 105, 145);
   outline-offset: 5px;
 }
 
@@ -831,8 +848,8 @@ p {
 .case-study-image img {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
   object-fit: cover;
 }
 

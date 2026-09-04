@@ -316,3 +316,76 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoScroll();
   });
 })();
+
+const form = document.getElementById('contactForm');
+
+if (form) {
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        // Web3Forms Access Key
+        formData.append(
+            "access_key",
+            "71b6c996-2c19-4b44-a1f4-61155515364d"
+        );
+
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = "Sending...";
+        submitBtn.disabled = true;
+
+        try {
+
+            const response = await fetch(
+                "https://api.web3forms.com/submit",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+
+                alert(
+                    "Success! Your message has been sent. " +
+                    "Our team will get back to you shortly."
+                );
+
+                form.reset();
+
+            } else {
+
+                alert(
+                    "Error: " +
+                    (data.message || "Unable to submit the form.")
+                );
+            }
+
+        } catch (error) {
+
+            console.error("Web3Forms Error:", error);
+
+            alert(
+                "Something went wrong. " +
+                "Please try again or contact us directly."
+            );
+
+        } finally {
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+
+        }
+
+    });
+
+}
+
