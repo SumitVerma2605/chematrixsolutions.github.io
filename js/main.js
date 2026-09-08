@@ -317,75 +317,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
-const form = document.getElementById('contactForm');
+const form = document.getElementById("contactForm");
 
 if (form) {
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-    const submitBtn = form.querySelector('button[type="submit"]');
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    form.addEventListener('submit', async (e) => {
+    const formData = new FormData(form);
 
-        e.preventDefault();
+    // Web3Forms Access Key
+    formData.append("access_key", "71b6c996-2c19-4b44-a1f4-61155515364d");
 
-        const formData = new FormData(form);
+    const originalText = submitBtn.innerHTML;
 
-        // Web3Forms Access Key
-        formData.append(
-            "access_key",
-            "71b6c996-2c19-4b44-a1f4-61155515364d"
+    submitBtn.innerHTML = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        alert(
+          "Success! Your message has been sent. " +
+            "Our team will get back to you shortly.",
         );
 
-        const originalText = submitBtn.innerHTML;
+        form.reset();
+      } else {
+        alert("Error: " + (data.message || "Unable to submit the form."));
+      }
+    } catch (error) {
+      console.error("Web3Forms Error:", error);
 
-        submitBtn.innerHTML = "Sending...";
-        submitBtn.disabled = true;
-
-        try {
-
-            const response = await fetch(
-                "https://api.web3forms.com/submit",
-                {
-                    method: "POST",
-                    body: formData
-                }
-            );
-
-            const data = await response.json();
-
-            if (response.ok && data.success) {
-
-                alert(
-                    "Success! Your message has been sent. " +
-                    "Our team will get back to you shortly."
-                );
-
-                form.reset();
-
-            } else {
-
-                alert(
-                    "Error: " +
-                    (data.message || "Unable to submit the form.")
-                );
-            }
-
-        } catch (error) {
-
-            console.error("Web3Forms Error:", error);
-
-            alert(
-                "Something went wrong. " +
-                "Please try again or contact us directly."
-            );
-
-        } finally {
-
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-
-        }
-
-    });
-
+      alert(
+        "Something went wrong. " + "Please try again or contact us directly.",
+      );
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+  });
 }
-
